@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Deixe seu Feedback</h1>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <span class="error-message"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="comentario">Comentário:</label>
+                <textarea id="comentario" name="comentario" rows="5" required></textarea>
+                <span class="error-message"></span>
+            </div>
+            
+            <div class="form-group rating-group">
+                <label>Estrelas:</label>
+                <div class="stars" id="stars">
+                    </div>
+                <input type="hidden" id="estrelas" name="estrelas" required data-min="1">
+                <span class="error-message"></span>
+            </div>
+            
+            <button type="submit" class="btn">Enviar Feedback</button>
+            <div id="statusMessage" class="status-message"></div>
+        </form>
+    </div>
+
+    <script src="./js/forms.js"></script>
+    <script>
+        // Inicializa a lógica de validação e o sistema de estrelas
+        document.addEventListener('DOMContentLoaded', () => {
+            setupStarRating();
+            initFormValidation('feedbackForm');
+        });
+    </script>
+</body>
+</html>

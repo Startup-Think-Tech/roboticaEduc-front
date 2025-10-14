@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fale Conosco</h1>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <span class="error-message"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                <span class="error-message"></span>
+            </div>
+            
+            <button type="submit" class="btn">Enviar Contato</button>
+            <div id="statusMessage" class="status-message"></div>
+        </form>
+    </div>
+
+    <script src="./js/forms.js"></script>
+    <script>
+        // Inicializa a lógica de validação para o formulário de Contato
+        document.addEventListener('DOMContentLoaded', () => {
+            initFormValidation('contactForm');
+        });
+    </script>
+</body>
+</html>
