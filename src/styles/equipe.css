@@ -10,7 +10,7 @@
 
 .equipe h2 {
   font-size: 2rem;
-  color: var(--color-warm);
+  color: var(--logo-color);
   margin-bottom: 1rem;
   font-weight: 700;
 }
@@ -35,7 +35,7 @@
 .conteiner-equipe {
   max-width: 100%;
   margin: 2rem auto;
-  padding: 0 0.5rem;
+  padding: 0 2rem; /* Aumentar padding para dar mais espaço */
   overflow: visible;
   position: relative;
   display: flex;
@@ -48,7 +48,7 @@
   position: relative;
   overflow: visible;
   margin: 0 auto;
-  max-width: calc(3 * 300px + 2 * 1.5rem);
+  max-width: calc(3 * 300px + 2 * 1.5rem + 4rem); /* Adicionar espaço extra para evitar corte */
   flex: 1;
 }
 
@@ -59,7 +59,7 @@
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  padding: 0.5rem 0 1.5rem 0;
+  padding: 0.5rem 1rem 1.5rem 1rem; /* Adicionar padding horizontal */
   scrollbar-width: none;
   -ms-overflow-style: none;
   justify-content: flex-start;
@@ -165,11 +165,11 @@
 }
 @media (max-width: 768px) {
   .conteiner-equipe {
-    padding: 0 0.5rem;
+    padding: 0 1rem; /* Manter padding adequado no mobile */
   }
 
   .carrossel-wrapper {
-    max-width: calc(1 * 280px);
+    max-width: calc(1 * 280px + 2rem); /* Adicionar espaço extra no mobile */
   }
 
   .card-membro {
@@ -180,17 +180,18 @@
 
   .conteiner-membros {
     justify-content: flex-start;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem; /* Padding menor no mobile */
   }
 }
 
 @media screen and (min-width: 600px) {
   .conteiner-equipe {
     max-width: 100%;
-    padding: 0 0.5rem;
+    padding: 0 2rem; /* Manter padding consistente */
   }
 
   .carrossel-wrapper {
-    max-width: calc(3 * 300px + 2 * 1.5rem);
+    max-width: calc(3 * 300px + 2 * 1.5rem + 4rem); /* Manter espaço extra */
   }
 
   .card-membro {
@@ -203,11 +204,11 @@
 @media screen and (min-width: 900px) {
   .conteiner-equipe {
     max-width: 100%;
-    padding: 0 0.5rem;
+    padding: 0 2rem; /* Manter padding consistente */
   }
 
   .carrossel-wrapper {
-    max-width: calc(3 * 300px + 2 * 1.5rem);
+    max-width: calc(3 * 300px + 2 * 1.5rem + 4rem); /* Manter espaço extra */
   }
 
   .card-membro {
