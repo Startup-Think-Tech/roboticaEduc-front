@@ -18,3 +18,197 @@ html {
     scroll-behavior: smooth;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Variáveis de Cores (Dark Mode Padrão) */
+:root {
+    --bg-color-dark: #122330;
+    --text-color-dark: #FFFFFF;
+    --header-bg-dark: rgba(18, 35, 48, 0.85); /* #122330 com transparência */
+    --accent-color-primary: #30A5BF;
+    --accent-color-secondary: #515EA6;
+    --logo-color: #30A5BF;
+    --button-bg-color: #30A5BF;
+    --button-hover-bg-color: #515EA6;
+    --shadow-color-dark: rgba(48, 165, 191, 0.4); /* Sombra suave do #30A5BF */
+}
+
+/* Variáveis de Cores (Light Mode) */
+.light-theme {
+    --bg-color-dark: #FFFFFF;
+    --text-color-dark: #122330;
+    --header-bg-dark: rgba(255, 255, 255, 0.85);
+    --accent-color-primary: #515EA6;
+    --accent-color-secondary: #30A5BF;
+    --logo-color: #515EA6;
+    --button-bg-color: #515EA6;
+    --button-hover-bg-color: #30A5BF;
+    --shadow-color-dark: rgba(81, 94, 166, 0.3);
+}
+
+/* Estilo Básico do Corpo (Aplica o tema escuro como padrão) */
+body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: sans-serif; /* Adicione uma fonte padrão */
+}
+
+/* Garante que todos os elementos de texto sigam o tema */
+h1, h2, h3, h4, h5, h6, p, a, li {
+    color: inherit;
+}
+
+/* Estilos de Contêiner Padrão (necessário para centralização) */
+.container {
+    max-width: 1200px; /* Ajuste conforme necessário */
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+/* --- Cabeçalho --- */
+.site-header {
+    display: block;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: var(--header-bg-dark); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Aplica o desfoque */
+    box-shadow: 0 2px 5px var(--shadow-color-dark); /* Sombra para destaque */
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo a {
+    color: var(--logo-color);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 20px; /* Ajuste a margem esquerda */
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: var(--accent-color-secondary);
+}
+
+/* Navegação */
+.site-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Reduzido o gap para 1.5rem */
+}
+
+.site-nav a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: color 0.3s, background 0.3s;
+}
+
+/* Destaque para link ativo (página atual) */
+.site-nav a[aria-current="page"] {
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent-color-primary);
+}
+
+.site-nav a:hover {
+    color: var(--accent-color-primary);
+}
+
+
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 768px) {
+    .site-nav {
+        /* Escondido por padrão, será mostrado com JS adicionando a classe .ativo */
+        display: none; 
+        flex-direction: column;
+        
+        background: var(--bg-color-dark); /* Fundo do menu mobile */
+        
+        position: absolute;
+        top: 70px; /* Abaixo do header */
+        right: 10px;
+        width: 200px;
+        padding: 15px;
+        border: 1px solid var(--accent-color-primary);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .site-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .site-nav li {
+        border-bottom: 1px solid #2A3544; /* Separador sutil */
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .site-nav li:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+}
+
+
+/* --- Footer Padrão --- */
+.site-footer {
+    padding: 2rem 0;
+    margin-top: 3rem;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    border-top: 1px solid var(--accent-color-primary);
+    font-size: 0.9rem;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+
+.footer-info p {
+    margin: 0.3rem 0;
+}
+
+.footer-links a {
+    color: var(--accent-color-primary);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color-secondary);
+}
+
+/* Responsividade do Footer */
+@media (max-width: 600px) {
+    .site-footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info {
+        margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+        margin: 0 0.5rem;
+        display: inline-block;
+    }
+}

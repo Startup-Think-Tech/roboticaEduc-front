@@ -207,10 +207,10 @@ html {
 
     /* Ajustar a posição das setas para que fiquem fora do conteúdo, se o wrapper for mais estreito */
     .carrossel-btn--prev {
-        left: -40px; /* Exemplo: mover mais para fora */
+        left: -40px; /* Distância da borda esquerda */
     }
     .carrossel-btn--next {
-        right: -40px; /* Exemplo: mover mais para fora */
+        right: -40px; /* Distância da borda direita */;
     }
 }
 
@@ -222,15 +222,15 @@ html {
     
     .card-membro {
         flex: 0 0 calc(33.333% - 1.333rem); /* (100% - 4rem) / 3 */
-        min-width: 280px; 
+        min-width: 250px; 
     }
 
     /* Ajustar a posição das setas em telas grandes */
     .carrossel-btn--prev {
-        left: -50px; /* Mais para fora ainda, para não cobrir o primeiro card */
+        left: -40px; /* Distância da borda esquerda */
     }
     .carrossel-btn--next {
-        right: -50px; /* Mais para fora ainda, para não cobrir o último card */
+        right: -40px; /* Distância da borda direita */
     }
 }
 
@@ -244,7 +244,7 @@ html {
 
 .carrossel-btn {
     position: absolute;
-    top: 50%;
+    top: 65%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
     color: white;
@@ -264,11 +264,11 @@ html {
 }
 
 .carrossel-btn--prev {
-    left: 10px; /* Distância da borda esquerda */
+    left: 430px; /* Distância da borda esquerda */
 }
 
 .carrossel-btn--next {
-    right: 10px; /* Distância da borda direita */
+    right: 430px; /* Distância da borda direita */
 }
 
 /* Ocultar as setas em telas pequenas se preferir a rolagem por toque */

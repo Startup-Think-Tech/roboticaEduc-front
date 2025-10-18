@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipe | Robótica Educacional</title>
     <link rel="stylesheet" href="../styles/equipe.css">
+    <link rel="stylesheet" href="../styles/base.css">
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo"><a href="sobre.html">Robótica Educacional</a></h1>
 
-    <header>
-        <nav aria-label="Navegação Principal do Site">
-            <a href="sobre.html">Robótica Educacional</a>
-            <ul>
-                <li><a href="sobre.html" aria-current="page">Sobre</a></li>
-                <li><a href="equipe.html">Equipe</a></li>
-                <li><a href="resultados.html">Resultados</a></li>
-                <li><a href="metodologia.html">Metodologia</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </nav>
+            <nav class="site-nav" aria-label="Navegação Principal do Site" id="siteNav">
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="resultados.html">Resultados</a></li>
+                    <li><a href="metodologia.html">Metodologia</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -34,8 +37,9 @@
         </section>
         <div class="cards-equipe">
             <div class="conteiner-equipe">
-                <div class="carrossel-wrapper"> <button class="carrossel-btn carrossel-btn--prev" aria-label="Anterior">
-                        &#10094; </button>
+                <button class="carrossel-btn carrossel-btn--prev" aria-label="Anterior"> &#10094; </button>
+                <div class="carrossel-wrapper">
+
 
                     <div class="conteiner-membros">
                         <article class="card-membro">
@@ -66,7 +70,8 @@
                                     Jessica constrói a infraestrutura robusta que suporta todo o sistema.</p>
                                 <div class="membro-links">
                                     <a href="#" target="_blank" class="link-linkedin">LinkedIn</a>
-                                    <a href="https://github.com/devel-jessy" target="_blank" class="link-github">GitHub</a>
+                                    <a href="https://github.com/devel-jessy" target="_blank"
+                                        class="link-github">GitHub</a>
                                 </div>
                             </div>
                         </article>
@@ -82,7 +87,8 @@
                                     solução técnica, Gabriel modela os requisitos e a arquitetura do projeto.</p>
                                 <div class="membro-links">
                                     <a href="#" target="_blank" class="link-linkedin">LinkedIn</a>
-                                    <a href="https://github.com/gabrielvasconcelos77" target="_blank" class="link-github">GitHub</a>
+                                    <a href="https://github.com/gabrielvasconcelos77" target="_blank"
+                                        class="link-github">GitHub</a>
                                 </div>
                             </div>
                         </article>
@@ -99,7 +105,8 @@
                                     usabilidade.</p>
                                 <div class="membro-links">
                                     <a href="#" target="_blank" class="link-linkedin">LinkedIn</a>
-                                    <a href="https://github.com/FrankJr23" target="_blank" class="link-github">GitHub</a>
+                                    <a href="https://github.com/FrankJr23" target="_blank"
+                                        class="link-github">GitHub</a>
                                 </div>
                             </div>
                         </article>
@@ -147,7 +154,8 @@
                                     a tomar decisões informadas para a evolução do produto.</p>
                                 <div class="membro-links">
                                     <a href="#" target="_blank" class="link-linkedin">LinkedIn</a>
-                                    <a href="https://github.com/Hello-Luke0" target="_blank" class="link-github">GitHub</a>
+                                    <a href="https://github.com/Hello-Luke0" target="_blank"
+                                        class="link-github">GitHub</a>
                                 </div>
                             </div>
                         </article>
@@ -163,13 +171,14 @@
                                     assegurando que o lançamento do produto seja suave e sem surpresas.</p>
                                 <div class="membro-links">
                                     <a href="#" target="_blank" class="link-linkedin">LinkedIn</a>
-                                    <a href="https://github.com/freitas7ana" target="_blank" class="link-github">GitHub</a>
+                                    <a href="https://github.com/freitas7ana" target="_blank"
+                                        class="link-github">GitHub</a>
                                 </div>
                             </div>
                         </article>
                         <article class="card-membro">
                             <figure class="foto-membro">
-                                <img src="../../img/antonio-carlos.webp" alt="Foto de Antônio Carlos">
+                                <img src="../assets/img/antonio.jpg" alt="Foto de Antônio Carlos">
                             </figure>
                             <div class="conteudo-membro">
                                 <span class="membro-funcao">Full-stack Developer</span>
@@ -178,29 +187,40 @@
                                 <p class="membro-texto">Com expertise nas duas pontas do desenvolvimento, Antônio é o
                                     coringa que transita entre o frontend e o backend com maestria.</p>
                                 <div class="membro-links">
-                                    <a href="#" target="_blank" class="link-linkedin">LinkedIn</a>
-                                    <a href="https://github.com/antoniooccarlos" target="_blank" class="link-github">GitHub</a>
+                                    <a href="https://www.linkedin.com/in/antonio-carlos-a543051b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "
+                                        target="_blank" class="link-linkedin">LinkedIn</a>
+                                    <a href="https://github.com/antoniooccarlos" target="_blank"
+                                        class="link-github">GitHub</a>
                                 </div>
                             </div>
                         </article>
                     </div>
 
-                    <button class="carrossel-btn carrossel-btn--next" aria-label="Próximo">
-                        &#10095; </button>
+
                 </div>
+                <button class="carrossel-btn carrossel-btn--next" aria-label="Próximo">
+                    &#10095; </button>
             </div>
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Nome do Seu Projeto. Todos os direitos reservados.</p>
-        <nav aria-label="Links secundários do rodapé">
-            <ul>
-                <li><a href="#">Política de Privacidade</a></li>
-                <li><a href="#">Termos de Uso</a></li>
-            </ul>
-        </nav>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; <span id="currentYear"></span> Robótica Educacional - Todos os direitos reservados.</p>
+                <p>Desenvolvimento em Equipe para Projeto Acadêmico.</p>
+            </div>
+            <div class="footer-links">
+                <a href="contato.html">Entre em Contato</a>
+                <a href="#">Voltar ao Topo</a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Script simples para atualizar o ano automaticamente
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 
