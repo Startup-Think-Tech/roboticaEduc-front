@@ -38,11 +38,11 @@
 }
 
 .carrossel-btn--prev {
-  left: -2rem;
+  left: -2.5rem;
 }
 
 .carrossel-btn--next {
-  right: -2rem;
+  right: -2.5rem; /* Mesma distância que a esquerda */
 }
 
 .btn {
@@ -85,11 +85,11 @@
 
 @media (max-width: 768px) {
   .carrossel-btn--prev {
-    left: -1.5rem;
+    left: -1.5rem; /* Muito mais distante no mobile */
   }
 
   .carrossel-btn--next {
-    right: -1.5rem;
+    right: -1.5rem; /* Mesma distância que a esquerda no mobile */
   }
 
   .carrossel-btn {
@@ -108,20 +108,20 @@
 
 @media screen and (min-width: 600px) {
   .carrossel-btn--prev {
-    left: -2rem;
+    left: -2.5rem; /* Muito mais distante no desktop */
   }
 
   .carrossel-btn--next {
-    right: -2rem;
+    right: -2.5rem; /* Mesma distância que a esquerda no desktop */
   }
 }
 
 @media screen and (min-width: 900px) {
   .carrossel-btn--prev {
-    left: -2rem;
+    left: -2.5rem; /* Muito mais distante no desktop grande */
   }
 
   .carrossel-btn--next {
-    right: -2rem;
+    right: -2.5rem; /* Mesma distância que a esquerda no desktop grande */
   }
 }

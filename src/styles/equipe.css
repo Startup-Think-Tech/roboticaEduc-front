@@ -48,8 +48,8 @@
   position: relative;
   overflow: visible;
   margin: 0 auto;
-  max-width: calc(3 * 300px + 2 * 1.5rem + 4rem); /* Adicionar espaço extra para evitar corte */
-  flex: 1;
+  max-width: calc(3 * 300px + 2 * 1.5rem); /* Largura exata para 3 cards + gaps */
+  flex: none; /* Não ocupar toda largura disponível */
 }
 
 .conteiner-membros {
@@ -59,10 +59,10 @@
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  padding: 0.5rem 1rem 1.5rem 1rem; /* Adicionar padding horizontal */
+  padding: 0.5rem 2rem 1.5rem 2rem; /* Adicionar padding horizontal para garantir visibilidade */
   scrollbar-width: none;
   -ms-overflow-style: none;
-  justify-content: flex-start;
+  justify-content: flex-start; /* Voltar para flex-start para mostrar os primeiros cards */
   width: 100%;
 }
 
@@ -83,7 +83,7 @@
   box-shadow: 0 2px 8px var(--shadow-light);
   display: flex;
   flex-direction: column;
-  margin: 0.5rem;
+  margin: 0; /* Remover margin para usar apenas gap */
 }
 
 .card-membro:hover {
@@ -166,10 +166,12 @@
 @media (max-width: 768px) {
   .conteiner-equipe {
     padding: 0 1rem; /* Manter padding adequado no mobile */
+    justify-content: center; /* Centralizar no mobile */
   }
 
   .carrossel-wrapper {
-    max-width: calc(1 * 280px + 2rem); /* Adicionar espaço extra no mobile */
+    max-width: calc(1 * 280px); /* Largura exata para 1 card no mobile */
+    flex: none; /* Não ocupar toda largura */
   }
 
   .card-membro {
@@ -179,8 +181,8 @@
   }
 
   .conteiner-membros {
-    justify-content: flex-start;
-    padding: 0.5rem 0.5rem 1.5rem 0.5rem; /* Padding menor no mobile */
+    justify-content: flex-start; /* Garantir que o primeiro card apareça no mobile */
+    padding: 0.5rem 1rem 1.5rem 1rem; /* Padding menor no mobile */
   }
 }
 
@@ -191,7 +193,8 @@
   }
 
   .carrossel-wrapper {
-    max-width: calc(3 * 300px + 2 * 1.5rem + 4rem); /* Manter espaço extra */
+    max-width: calc(3 * 300px + 2 * 1.5rem); /* Largura exata para 3 cards */
+    flex: none; /* Não ocupar toda largura */
   }
 
   .card-membro {
@@ -208,7 +211,8 @@
   }
 
   .carrossel-wrapper {
-    max-width: calc(3 * 300px + 2 * 1.5rem + 4rem); /* Manter espaço extra */
+    max-width: calc(3 * 300px + 2 * 1.5rem); /* Largura exata para 3 cards */
+    flex: none; /* Não ocupar toda largura */
   }
 
   .card-membro {
