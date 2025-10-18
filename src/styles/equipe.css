@@ -1,279 +1,218 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url("./main.css");
 
-body {
-    background-color: rgb(246, 246, 241);
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1a1a1a;
-    line-height: 1.6;
-}
-
-html {
-
-    font-family: Fallback;
-    font-size: 16px;
-    scroll-behavior: smooth;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* page Equipe  */
-
-/* --- Estilos de Equipe (Header) --- */
+/* EQUIPE  */
 .equipe {
-    text-align: center;
-    max-width: 800px;
-    margin: 4rem auto 2rem auto;
-    padding: 0 1rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 4rem auto 2rem auto;
+  padding: 0 1rem;
 }
 
 .equipe h2 {
-    font-size: 2rem;
-    color: #114704;
-    margin-bottom: 1rem;
-    font-weight: 700;
+  font-size: 2rem;
+  color: var(--color-warm);
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .equipe p {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: #6b82a7;
-    margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--card-text-secondary);
+  margin: 0;
 }
 
-/* --- Estilos do Contêiner Geral (Carrossel) --- */
+/* MEMBROS */
+.cards-equipe .container {
+  max-width: none;
+  width: 100%;
+}
+
+.cards-equipe {
+  overflow: visible;
+}
+
 .conteiner-equipe {
-    /* Largura ligeiramente maior em mobile para garantir que o primeiro card
-       comece na borda e não tenha o card seguinte cortado (o scroll-snap-align: start
-       geralmente resolve, mas o padding interno do .conteiner-equipe ajuda). */
-    max-width: 100%; 
-    margin: 2rem auto;
-    padding: 0 1rem;
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 0 0.5rem;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.carrossel-wrapper {
+  position: relative;
+  overflow: visible;
+  margin: 0 auto;
+  max-width: calc(3 * 300px + 2 * 1.5rem);
+  flex: 1;
 }
 
 .conteiner-membros {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 2rem; 
-    
-    overflow-x: auto; 
-    overflow-y: hidden;
-    
-    scroll-snap-type: x mandatory; 
-    padding-bottom: 1.5rem; /* Espaço para a barra de rolagem */
-    
-    /* Quando as setas estão visíveis, pode-se ajustar o padding-left/right
-       do .conteiner-membros para que os cards não fiquem debaixo das setas.
-       Vamos adicionar um padding aqui ou no .carrossel-wrapper se necessário.
-       Por agora, vou manter o padding do .conteiner-equipe e deixar as setas
-       flutuarem por cima. */
-}                                                                                       
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 0 1.5rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  justify-content: flex-start;
+  width: 100%;
+}
 
 .conteiner-membros::-webkit-scrollbar {
-    height: 8px;
-}
-.conteiner-membros::-webkit-scrollbar-thumb {
-    background-color: #6b82a7;
-    border-radius: 4px;
+  display: none;
 }
 
-/* --- Estilos do Card Individual (Mobile/Padrão) --- */
+/* MEMBROS */
 .card-membro {
-    /* No mobile/padrão, exibimos apenas 1 card por vez.
-       O card ocupa a largura total da tela menos os paddings laterais. */
-    flex: 0 0 calc(100% - 2rem); /* 100% da largura do contêiner - 2rem de gap */
-    min-width: 280px; /* Mantemos um tamanho mínimo para evitar cards muito pequenos */
-    
-    background: white;
-    border-radius: 20px;
-    transition: 0.3s;
-    overflow: hidden;
-    scroll-snap-align: start; 
-    
-    display: flex;
-    flex-direction: column; 
+  flex: 0 0 300px;
+  min-width: 300px;
+  max-width: 300px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
 }
-
-/* ... (Mantenha os estilos de :hover, foto-membro, conteudo-membro, links, etc.) ... */
 
 .card-membro:hover {
-    box-shadow: 0 4px 20px 0 rgba(34, 68, 123, 0.2);
-    cursor: pointer;
-    transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  cursor: pointer;
+  transform: translateY(-8px);
 }
 
-/* --- Estilos de Imagem e Conteúdo (Reutilizados) --- */
 .foto-membro {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .foto-membro img {
-    width: 100%;
-    height: 260px; /* Altura fixa para uniformidade visual */
-    object-fit: cover;
-    border-radius: 20px 20px 0 0;
-    display: block; 
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  display: block;
 }
 
 .conteudo-membro {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .conteudo-membro .membro-funcao {
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
-    color: #6b82a7;
-    display: block;
-    margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--accent-color-primary);
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .conteudo-membro .membro-nome {
-    margin: 0;
-    color: #22447b;
-    font-size: 1.5rem; 
-    font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--card-text);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .conteudo-membro .membro-curso {
-    font-size: 0.9rem;
-    color: #114704;
-    margin: 0.5rem 0 1rem 0;
-    font-style: italic;
+  font-size: 0.85rem;
+  color: var(--card-text-secondary);
+  margin: 0 0 1rem 0;
+  font-style: italic;
+  font-weight: 500;
 }
 
 .conteudo-membro .membro-texto {
-    font-size: 1rem;
-    line-height: 1.5rem;
-    color: #6b82a7;
-    margin: 0 0 1.5rem 0;
-    flex-grow: 1; 
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--card-text-secondary);
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
 }
 
-/* Estilos dos Links (LinkedIn e GitHub) */
 .membro-links {
-    margin-top: auto; 
-    display: flex;
-    gap: 1rem;
+  margin-top: auto;
+  display: flex;
+  gap: 0.75rem;
 }
 
 .membro-links a {
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background 0.3s;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
 }
+@media (max-width: 768px) {
+  .conteiner-equipe {
+    padding: 0 0.5rem;
+  }
 
-.link-linkedin {
-    color: white;
-    background-color: #0077B5; 
+  .carrossel-wrapper {
+    max-width: calc(1 * 280px);
+  }
+
+  .card-membro {
+    flex: 0 0 280px;
+    min-width: 280px;
+    max-width: 280px;
+  }
+
+  .conteiner-membros {
+    justify-content: flex-start;
+  }
 }
-
-.link-linkedin:hover {
-    background-color: #005582;
-}
-
-.link-github {
-    color: #24292e; 
-    background-color: #f6f8fa;
-    border: 1px solid #e1e4e8;
-}
-
-.link-github:hover {
-    background-color: #e1e4e8;
-}
-
-/* --- Media Queries --- */
 
 @media screen and (min-width: 600px) {
-    .conteiner-equipe {
-        max-width: 600px;
-        padding: 0 2rem;
-    }
-    
-    .card-membro {
-        flex: 0 0 calc(50% - 1rem); 
-        min-width: 260px; 
-    }
+  .conteiner-equipe {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
 
-    /* Ajustar a posição das setas para que fiquem fora do conteúdo, se o wrapper for mais estreito */
-    .carrossel-btn--prev {
-        left: -40px; /* Distância da borda esquerda */
-    }
-    .carrossel-btn--next {
-        right: -40px; /* Distância da borda direita */;
-    }
+  .carrossel-wrapper {
+    max-width: calc(3 * 300px + 2 * 1.5rem);
+  }
+
+  .card-membro {
+    flex: 0 0 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
 }
 
-/* Em telas GRANDES, visualização de 3 cards inteiros */
 @media screen and (min-width: 900px) {
-    .conteiner-equipe {
-        max-width: 964px; 
-    }
-    
-    .card-membro {
-        flex: 0 0 calc(33.333% - 1.333rem); /* (100% - 4rem) / 3 */
-        min-width: 250px; 
-    }
+  .conteiner-equipe {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
 
-    /* Ajustar a posição das setas em telas grandes */
-    .carrossel-btn--prev {
-        left: -40px; /* Distância da borda esquerda */
-    }
-    .carrossel-btn--next {
-        right: -40px; /* Distância da borda direita */
-    }
-}
+  .carrossel-wrapper {
+    max-width: calc(3 * 300px + 2 * 1.5rem);
+  }
 
-/* --- NOVO: Estilos para o Wrapper do Carrossel e Botões de Navegação --- */
-.carrossel-wrapper {
-    position: relative; /* Essencial para posicionar as setas de forma absoluta */
-    overflow: hidden; /* Garante que as setas não fiquem fora do contêiner */
-    margin: 0 auto; /* Para centralizar o wrapper em telas maiores */
-    max-width: 100%; /* Permite o wrapper ocupar toda a largura disponível */
-}
-
-.carrossel-btn {
-    position: absolute;
-    top: 65%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-    color: white;
-    border: none;
-    padding: 0.8rem 1.2rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 10; /* Garante que as setas fiquem por cima dos cards */
-    border-radius: 50%; /* Para deixá-las redondas */
-    opacity: 0.7; /* Suave por padrão */
-    transition: opacity 0.3s, background-color 0.3s;
-}
-
-.carrossel-btn:hover {
-    opacity: 1;
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.carrossel-btn--prev {
-    left: 430px; /* Distância da borda esquerda */
-}
-
-.carrossel-btn--next {
-    right: 430px; /* Distância da borda direita */
-}
-
-/* Ocultar as setas em telas pequenas se preferir a rolagem por toque */
-@media (max-width: 599px) {
-    .carrossel-btn {
-        display: none;
-    }
+  .card-membro {
+    flex: 0 0 300px;
+    min-width: 300px;
+    max-width: 300px;
+  }
 }
