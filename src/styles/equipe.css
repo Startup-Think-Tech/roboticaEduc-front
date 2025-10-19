@@ -5,6 +5,7 @@
 }
 
 body {
+    
     background-color: rgb(246, 246, 241);
     font-family: Arial, Helvetica, sans-serif;
     color: #1a1a1a;
@@ -31,7 +32,7 @@ html {
 
 .equipe h2 {
     font-size: 2rem;
-    color: #114704;
+    color: #30A5BF;
     margin-bottom: 1rem;
     font-weight: 700;
 }
