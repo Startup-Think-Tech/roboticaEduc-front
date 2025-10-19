@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
+    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/forms.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Deixe seu Feedback</h1>
-        <form id="feedbackForm">
+    <header class="site-header">
+        <div class="container">
+            <h1 class="logo"><a href="sobre.html">Robótica Educacional</a></h1>
+
+            <nav class="site-nav" aria-label="Navegação Principal do Site" id="siteNav">
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="equipe.html">Equipe</a></li>
+                    <li><a href="resultados.html">Resultados</a></li>
+                    <li><a href="metodologia.html">Metodologia</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="form-container">
+                <h1>Deixe seu Feedback</h1>
+                <form id="feedbackForm">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
@@ -30,12 +50,27 @@
                 <span class="error-message"></span>
             </div>
             
-            <button type="submit" class="btn">Enviar Feedback</button>
-            <div id="statusMessage" class="status-message"></div>
-        </form>
-    </div>
+                    <button type="submit" class="btn">Enviar Feedback</button>
+                    <div id="statusMessage" class="status-message"></div>
+                </form>
+            </div>
+        </div>
+    </main>
 
-    <script src="./js/forms.js"></script>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-info">
+                <p>&copy; <span id="currentYear"></span> Robótica Educacional - Todos os direitos reservados.</p>
+                <p>Desenvolvimento em Equipe para Projeto Acadêmico.</p>
+            </div>
+            <div class="footer-links">
+                <a href="contato.html">Entre em Contato</a>
+                <a href="#">Voltar ao Topo</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/forms.js"></script>
     <script>
         // Inicializa a lógica de validação e o sistema de estrelas
         document.addEventListener('DOMContentLoaded', () => {

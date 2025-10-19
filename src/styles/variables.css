@@ -1,19 +1,55 @@
 :root {
-  --color-warm: #BF6D24;
-  --color-primary: #6E7BFF;
-  --color-background: #F3F6FA;
-  --color-background-secondary: #E3E9F1;
-  --color-accent: #2C9AC1;
-  --color-text-primary: #1A1A1A;
-  --color-text-secondary: #4A4A4A;
+  /* Cores principais */
+  --color-warm: #bf6d24;
+  --color-primary: #6e7bff;
+  --color-accent: #2c9ac1;
+  
+  /* Backgrounds */
+  --color-background: #f3f6fa;
+  --color-background-secondary: #e3e9f1;
+  --card-bg: #ffffff;
+  
+  /* Textos */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #666666;
+  --card-text: #1a1a1a;
+  --card-text-secondary: #666666;
+  
+  /* Estados */
+  --color-success-bg: #d4edda;
+  --color-success-text: #155724;
+  --color-success-border: #c3e6cb;
+  --color-error-bg: #f8d7da;
+  --color-error-text: #721c24;
+  --color-error-border: #f5c6cb;
+  --color-star: gold;
+  
+  /* Sombras */
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+  
+  /* Tema escuro  */
+  --bg-color-dark: #122330;
+  --text-color-dark: #ffffff;
+  --header-bg-dark: rgba(18, 35, 48, 0.85);
+  --accent-color-primary: #30a5bf;
+  --accent-color-secondary: #515ea6;
+  --logo-color: #30a5bf;
+  --button-bg-color: #30a5bf;
+  --button-hover-bg-color: #515ea6;
+  --shadow-color-dark: rgba(48, 165, 191, 0.4);
 }
 
-/*  Tema Dark */
-.dark {
-  --color-primary: #515EA6;
-  --color-background: #122330;
-  --color-background-secondary: #2A3544;
-  --color-accent: #30A5BF;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #CCCCCC;
+/* Tema alternativo */
+.light-theme {
+  --bg-color-dark: #ffffff;
+  --text-color-dark: #122330;
+  --header-bg-dark: rgba(255, 255, 255, 0.85);
+  --accent-color-primary: #515ea6;
+  --accent-color-secondary: #30a5bf;
+  --logo-color: #515ea6;
+  --button-bg-color: #515ea6;
+  --button-hover-bg-color: #30a5bf;
+  --shadow-color-dark: rgba(81, 94, 166, 0.3);
 }

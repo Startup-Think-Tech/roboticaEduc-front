@@ -1,0 +1,127 @@
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--accent-color-primary);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 99999;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: all 0.3s;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-btn:hover {
+  opacity: 1;
+  background-color: var(--button-hover-bg-color);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carrossel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background-color: var(--color-background-secondary);
+}
+
+.carrossel-btn:disabled:hover {
+  opacity: 0.3;
+  background-color: var(--color-background-secondary);
+  transform: translateY(-50%);
+}
+
+.carrossel-btn--prev {
+  left: -2.5rem;
+}
+
+.carrossel-btn--next {
+  right: -2.5rem; /* Mesma distância que a esquerda */
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--color-warm);
+}
+
+.link-linkedin {
+  color: white;
+  background-color: var(--accent-color-primary);
+}
+
+.link-linkedin:hover {
+  background-color: var(--button-hover-bg-color);
+  transform: translateY(-2px);
+}
+
+.link-github {
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-background-secondary);
+}
+
+.link-github:hover {
+  background-color: var(--color-background-secondary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .carrossel-btn--prev {
+    left: -1.5rem; /* Muito mais distante no mobile */
+  }
+
+  .carrossel-btn--next {
+    right: -1.5rem; /* Mesma distância que a esquerda no mobile */
+  }
+
+  .carrossel-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    opacity: 0.6;
+    background-color: rgba(48, 165, 191, 0.7);
+  }
+
+  .carrossel-btn:hover {
+    opacity: 0.8;
+    background-color: rgba(48, 165, 191, 0.9);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .carrossel-btn--prev {
+    left: -2.5rem; /* Muito mais distante no desktop */
+  }
+
+  .carrossel-btn--next {
+    right: -2.5rem; /* Mesma distância que a esquerda no desktop */
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .carrossel-btn--prev {
+    left: -2.5rem; /* Muito mais distante no desktop grande */
+  }
+
+  .carrossel-btn--next {
+    right: -2.5rem; /* Mesma distância que a esquerda no desktop grande */
+  }
+}
