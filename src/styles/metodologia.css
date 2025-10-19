@@ -1,0 +1,165 @@
+.steam {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+.steam-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card {
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 120px;
+  transition: transform 0.3s;
+}
+
+.card p{
+  color: white;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+.s { background: #3cb371; }
+.t { background: #1e90ff; }
+.e { background: #ffa500; }
+.a { background: #ff6347; }
+.m { background: #9370db; }
+
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 2%;
+    text-align: justify;
+    margin-bottom: 3%;
+}
+
+section p, section ul{
+    color: #6b82a7;
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+section ul{
+    margin-left: 2%;
+}
+
+h3{
+    margin-bottom: 8px;
+}
+
+#title{
+    margin: 10px 5%
+}
+/*
+
+/* === RESPONSIVIDADE === */
+
+/* --- CELULAR: até 767px --- */
+@media (max-width: 767px) {
+
+  /* Título centralizado e menor */
+  #title {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  /* Cards em uma única coluna */
+  .steam-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  /* Seções com margens mais suaves */
+  section {
+    margin: 10px 8%;
+  }
+
+  section p, section ul {
+    font-size: 1rem;
+  }
+
+  /* Footer empilhado */
+  .site-footer .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-top: 10px;
+  }
+
+  /* Menu: empilhar e centralizar */
+  .site-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .logo a {
+    font-size: 20px;
+  }
+}
+
+/* --- TABLET: entre 768px e 1024px --- */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  #title {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  /* Cards em duas ou três colunas */
+  .steam-grid {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .card {
+    width: 150px;
+  }
+
+  section {
+    margin: 20px 10%;
+  }
+
+  section p, section ul {
+    font-size: 1.05rem;
+  }
+
+  .site-header .container {
+    flex-direction: column;
+  }
+
+  .site-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* --- DESKTOP: a partir de 1025px --- */
+@media (min-width: 1025px) {
+
+  .steam-grid {
+    justify-content: center;
+  }
+
+  .card {
+    width: 120px;
+  }
+
+  section {
+    margin: 20px 5%;
+  }
+}
