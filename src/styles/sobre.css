@@ -1,198 +1,172 @@
-/* =========================== */
-/* ESTILOS GERAIS DE ESTRUTURA */
-/* =========================== */
-
-body {
-    background-color: rgb(246, 246, 241);
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1a1a1a;
-    line-height: 1.6;
-}
+@import url("./main.css");
 
 main {
-    max-width: 1200px;
-    margin: 4rem auto; /* Centraliza a main e adiciona margem superior/inferior */
-    padding: 0 1.5rem; /* Padding horizontal para telas menores */
-    display: flex;
-    flex-direction: column;
-    gap: 3rem; /* Espaçamento entre as seções principais */
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: var(--accent-color-primary); /* Cor de destaque (Ciano/Azul principal) */
-    text-align: center;
-    padding-bottom: 1rem;
+/* Título da página */
+.page-title {
+  font-size: 2rem;
+  color: var(--accent-color-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
-section {
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px var(--shadow-medium); /* Sombra suave */
-    background-color: var(--card-bg); /* Fundo do card (Branco) */
-    color: var(--card-text);
+/* Seções gerais */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent-color-secondary);
+  border-left: 5px solid var(--color-accent);
+  padding-left: 10px;
 }
 
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: var(--accent-color-secondary); /* Cor de destaque para subtítulos (Azul secundário) */
-    /* Substituição do Destaque Lateral que usava --color-warm */
-    border-left: 5px solid var(--color-accent); 
-    padding-left: 10px;
+.section-description {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--card-text-secondary);
 }
 
-section p, section li {
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: var(--card-text-secondary);
+/* Seção de Objetivos */
+.objetivo-section {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow-medium);
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border-left: 8px solid var(--accent-color-primary);
 }
 
-/* =========================== */
-/* SEÇÃO OBJETIVO */
-/* =========================== */
-
-.obetivo {
-    border-left: 8px solid var(--accent-color-primary); /* Borda mais grossa para ênfase (Ciano) */
+.subsection-title {
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
-.obetivo h3 {
-    font-size: 1.5rem;
-    color: var(--color-text-primary);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+.objectives-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-/* Estilo para a lista de Objetivos Específicos (Cards) */
-.obetivo ul {
-    list-style: none; /* Remove marcadores padrão */
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 1.5rem; 
+.objective-item {
+  background-color: var(--color-background);
+  flex: 1 1 calc(33% - 1.5rem);
+  min-width: 280px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--shadow-light);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  position: relative;
+  border-top: 4px solid var(--color-primary);
+  margin-bottom: 0;
+  line-height: 1.6;
+  color: var(--card-text-secondary);
 }
 
-.obetivo ul li {
-    background-color: var(--color-background); /* Fundo sutil para o card individual */
-    flex: 1 1 calc(33% - 1.5rem); 
-    min-width: 280px; 
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px var(--shadow-light);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    position: relative;
-    
-    /* Substituição do Destaque no topo que usava --color-warm */
-    border-top: 4px solid var(--color-primary); /* Destaque no topo do card (Azul primário) */
-    
-    margin-bottom: 0; 
+.objective-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px var(--shadow-medium);
 }
 
-.obetivo ul li:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 6px 15px var(--shadow-medium);
+.objective-item::before {
+  content: "🚀";
+  color: var(--accent-color-primary);
+  font-weight: bold;
+  margin-right: 0.5rem;
 }
 
-/* Adiciona um marcador visual customizado */
-.obetivo ul li::before {
-    content: "🚀"; /* Mudando o marcador para um emoji relacionado a tecnologia */
-    color: var(--accent-color-primary);
-    font-weight: bold;
-    margin-right: 0.5rem;
+/* Seção de Problemas */
+.problema-section {
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow-medium);
+  background-color: var(--color-background-secondary);
+  color: var(--card-text);
+  border: 1px solid var(--shadow-light);
+  display: flex;
+  flex-direction: column;
 }
 
-
-/* =========================== */
-/* SEÇÃO PROBLEMA RESOLVIDO */
-/* =========================== */
-
-.problema-resolvido {
-    background-color: var(--color-background-secondary); 
-    border: 1px solid var(--shadow-light);
-    display: flex;
-    flex-direction: column;
+.problems-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.problema-resolvido ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column; 
-    gap: 1.5rem;
+.problem-item {
+  padding: 1rem;
+  border-left: 4px solid var(--color-accent);
+  background-color: var(--card-bg);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px var(--shadow-light);
+  margin-bottom: 0;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--card-text-secondary);
 }
 
-.problema-resolvido ul li {
-    padding: 1rem;
-    border-left: 4px solid var(--color-accent); /* Destaque lateral (Ciano) */
-    background-color: var(--card-bg);
-    border-radius: 6px;
-    box-shadow: 0 2px 4px var(--shadow-light);
-    margin-bottom: 0;
-    font-weight: 500;
+/* Seção de Público-Alvo */
+.publico-section {
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow-dark);
+  background-color: var(--accent-color-secondary);
+  color: var(--text-color-dark);
+  text-align: center;
 }
 
-.problema-resolvido ul li p {
-    font-weight: bold;
-    color: var(--color-text-primary);
-    margin-bottom: 0.5rem;
-    display: block; 
+.publico-section .section-title {
+  color: var(--text-color-dark);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  border: none;
 }
 
-/* =========================== */
-/* SEÇÃO PÚBLICO ALVO (Ênfase) */
-/* =========================== */
-
-.publico-alvo {
-    text-align: center;
-    padding: 3rem 2rem;
-    background-color: var(--accent-color-secondary); /* Forte ênfase (Azul escuro/secundário) */
-    color: var(--text-color-dark); 
-    border-radius: 12px;
-    box-shadow: 0 8px 20px var(--shadow-dark); 
+.publico-section .section-description {
+  font-size: 1.3rem;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0.5rem auto 0;
+  color: #fff;
 }
-
-.publico-alvo h2 {
-    color: var(--text-color-dark); /* Cor do título (branca/clara) */
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    border: none; 
-}
-
-.publico-alvo p {
-    font-size: 1.3rem;
-    font-weight: 500;
-    max-width: 800px;
-    margin: 0.5rem auto 0;
-    color: #fff; /* Texto em branco puro para maior contraste */
-}
-
-/* =========================== */
-/* RESPONSIVIDADE BÁSICA */
-/* =========================== */
 
 @media (max-width: 768px) {
-    main {
-        margin: 2rem auto;
-        gap: 2rem;
-    }
+  main {
+    margin: 2rem auto;
+    gap: 2rem;
+  }
 
-    h1 {
-        font-size: 2rem;
-    }
+  .page-title {
+    font-size: 1.7rem;
+  }
 
-    section {
-        padding: 1.5rem;
-    }
+  .objetivo-section,
+  .problema-section,
+  .publico-section {
+    padding: 1.5rem;
+  }
 
-    section h2 {
-        font-size: 1.7rem;
-    }
+  .section-title {
+    font-size: 1.7rem;
+  }
 
-    .obetivo ul {
-        flex-direction: column; 
-    }
+  .objectives-list {
+    flex-direction: column;
+  }
 
-    .obetivo ul li {
-        flex: 1 1 100%; 
-    }
+  .objective-item {
+    flex: 1 1 100%;
+  }
 }
