@@ -1,4 +1,78 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const themeToggle = document.getElementById("themeToggle");
+  const body = document.body;
+
+  if (themeToggle) {
+    // Verificar tema salvo no localStorage
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    body.classList.toggle("light-theme", savedTheme === "light");
+
+    themeToggle.addEventListener("click", function () {
+      body.classList.toggle("light-theme");
+      const isLightTheme = body.classList.contains("light-theme");
+      localStorage.setItem("theme", isLightTheme ? "light" : "dark");
+    });
+  }
+
+  // Funcionalidade do menu hambúrguer
+  const hamburger = document.getElementById("hamburger");
+  const siteNav = document.getElementById("siteNav");
+  const mobileOverlay = document.getElementById("mobileOverlay");
+
+  if (hamburger && siteNav && mobileOverlay) {
+    hamburger.addEventListener("click", function () {
+      hamburger.classList.toggle("active");
+      siteNav.classList.toggle("active");
+      mobileOverlay.classList.toggle("active");
+    });
+
+    // Fechar menu ao clicar em um link
+    const navLinks = siteNav.querySelectorAll("a");
+    navLinks.forEach(link => {
+      link.addEventListener("click", function () {
+        hamburger.classList.remove("active");
+        siteNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+      });
+    });
+
+    // Fechar menu ao clicar no overlay
+    mobileOverlay.addEventListener("click", function () {
+      hamburger.classList.remove("active");
+      siteNav.classList.remove("active");
+      mobileOverlay.classList.remove("active");
+    });
+
+    // Fechar menu ao pressionar ESC
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && siteNav.classList.contains("active")) {
+        hamburger.classList.remove("active");
+        siteNav.classList.remove("active");
+        mobileOverlay.classList.remove("active");
+      }
+    });
+  }
+
+  // Funcionalidade de header sticky
+  const siteHeader = document.querySelector('.site-header');
+  
+  if (siteHeader) {
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (scrollTop > 50) {
+        siteHeader.classList.add('sticky');
+      } else {
+        siteHeader.classList.remove('sticky');
+      }
+      
+      lastScrollTop = scrollTop;
+    });
+  }
+
+  // Funcionalidade do carrossel
   const carrosselContainer = document.querySelector(".conteiner-membros");
   const prevBtn = document.querySelector(".carrossel-btn--prev");
   const nextBtn = document.querySelector(".carrossel-btn--next");

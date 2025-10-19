@@ -39,6 +39,15 @@
   --button-bg-color: #30a5bf;
   --button-hover-bg-color: #515ea6;
   --shadow-color-dark: rgba(48, 165, 191, 0.4);
+  
+  /* Sobrescrever cores para tema escuro */
+  --color-background: #1a2a3a;
+  --color-background-secondary: #2a3a4a;
+  --card-bg: #2a3a4a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b0b0;
+  --card-text: #ffffff;
+  --card-text-secondary: #b0b0b0;
 }
 
 /* Tema alternativo */
@@ -52,4 +61,18 @@
   --button-bg-color: #515ea6;
   --button-hover-bg-color: #30a5bf;
   --shadow-color-dark: rgba(81, 94, 166, 0.3);
+  
+  /* Cores que mudam no tema claro */
+  --color-background: #f8f9fa;
+  --color-background-secondary: #e9ecef;
+  --card-bg: #ffffff;
+  --color-text-primary: #122330;
+  --color-text-secondary: #495057;
+  --card-text: #122330;
+  --card-text-secondary: #495057;
+  
+  /* Sombras mais suaves no tema claro */
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.15);
 }

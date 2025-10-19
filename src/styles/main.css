@@ -10,7 +10,7 @@
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--bg-color-dark);
   color: var(--text-color-dark);
   transition: background-color 0.3s, color 0.3s;
   font-family: sans-serif;

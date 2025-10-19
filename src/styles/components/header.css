@@ -8,12 +8,26 @@
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 5px var(--shadow-color-dark);
   width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* Efeito quando header está "colada" no topo */
+.site-header.sticky {
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 15px var(--shadow-color-dark);
+  backdrop-filter: blur(15px);
 }
 
 .site-header .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
 }
 
 .logo a {
@@ -21,12 +35,77 @@
   text-decoration: none;
   font-size: 25px;
   font-weight: bold;
-  margin-left: 20px;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .logo a:hover {
   color: var(--accent-color-secondary);
+}
+
+/* Efeito quando header está sticky */
+.site-header.sticky .logo a {
+  font-size: 22px;
+}
+
+.site-header.sticky .site-nav a {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.site-header.sticky .theme-toggle {
+  width: 40px;
+  height: 40px;
+}
+
+.site-header.sticky .hamburger {
+  width: 25px;
+  height: 25px;
+}
+
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 20px;
+}
+
+/* Menu hambúrguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-color-dark);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Animação do hambúrguer quando ativo */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .site-nav ul {
@@ -52,37 +131,188 @@
   color: var(--accent-color-primary);
 }
 
+/* Botão de alternância de tema */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--accent-color-primary);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-color-primary);
+  transform: scale(1.1);
+}
+
+.theme-icon {
+  font-size: 20px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.sun-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.moon-icon {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+/* Estado do tema claro */
+.light-theme .sun-icon {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+.light-theme .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.light-theme .theme-toggle {
+  border-color: var(--accent-color-secondary);
+}
+
+.light-theme .theme-toggle:hover {
+  background-color: var(--accent-color-secondary);
+}
+
 @media (max-width: 768px) {
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .site-header .container {
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: static;
+  }
+
+  .hamburger {
+    display: flex;
+    position: static;
+    margin-right: 10px;
+  }
+
+  .theme-toggle {
+    position: static;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  .theme-icon {
+    font-size: 14px;
+  }
+
+  /* Efeitos sticky no mobile */
+  .site-header.sticky {
+    padding: 0.3rem 0;
+  }
+
+  .site-header.sticky .logo a {
+    font-size: 20px;
+  }
+
+  .site-header.sticky .theme-toggle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .site-header.sticky .theme-icon {
+    font-size: 12px;
+  }
+
+  .site-header.sticky .hamburger {
+    width: 22px;
+    height: 22px;
+  }
+
+  .site-header.sticky .hamburger-line {
+    height: 2px;
+  }
+
   .site-nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: var(--header-bg-dark);
+    backdrop-filter: blur(15px);
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 4rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.4);
+  }
 
-    background: var(--bg-color-dark);
+  .site-nav.active {
+    transform: translateX(0);
+  }
 
-    position: absolute;
-    top: 70px;
-    right: 10px;
-    width: 200px;
-    padding: 15px;
-    border: 1px solid var(--accent-color-primary);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px var(--shadow-dark);
+  /* Overlay separado para escurecer o conteúdo de fora */
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  .mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .site-nav ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1.2rem;
+    text-align: center;
+    padding: 0 2rem;
+    width: 100%;
   }
 
-  .site-nav li {
-    border-bottom: 1px solid var(--color-background-secondary);
-    padding-bottom: 5px;
-    margin-bottom: 5px;
+  .site-nav a {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
   }
 
-  .site-nav li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+  .site-nav a:hover {
+    background-color: var(--accent-color-primary);
+    color: var(--text-color-dark);
+    transform: translateX(-5px);
   }
 }
