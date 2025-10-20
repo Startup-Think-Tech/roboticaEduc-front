@@ -1,145 +1,263 @@
 /* Reset básico e centralização */
 body {
-  font-family: Arial, sans-serif;
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
-  padding: 40px 20px;
-  min-height: 100vh;
+    font-family: Arial, sans-serif;
+    /* Assume que o background principal é o dark theme */
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    padding: 0; /* O container fará o espaçamento */
+    min-height: 100vh;
 }
 
 .form-container {
-  background: var(--text-color-dark);
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow-light);
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
+    /* Fundo do card, usando a cor de card do tema escuro */
+    color: var(--card-text);
+    padding: 30px 40px;
+    border-radius: 12px;
+    /* Aumenta a largura máxima para acomodar as 8 perguntas */
+    max-width: 800px; 
+    margin: 40px auto;
+    /* Sombra mais proeminente e com cor de destaque */
+    box-shadow: 0 10px 30px var(--shadow-color-dark);
 }
 
-h1 {
-  text-align: center;
-  color: var(--accent-color-primary); /* Cor principal da identidade */
-  margin-bottom: 25px;
+/* ----------------------------------------------------------- */
+/* --- ESTILO DOS TÍTULOS E TEXTO INFORMATIVO --- */
+/* ----------------------------------------------------------- */
+.feedback-main-title {
+    text-align: center;
+    /* Usa a cor principal de acento para destaque */
+    color: var(--accent-color-primary);
+    margin-bottom: 5px;
+    font-size: 2.2em;
 }
 
-/* Estilo para os grupos de formulário */
+.instruction-text {
+    text-align: center;
+    /* Cor secundária para o texto de instrução */
+    color: var(--card-text-secondary);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+/* ----------------------------------------------------------- */
+/* --- AGRUPAMENTO DAS 8 PERGUNTAS (SECTIONS) --- */
+/* ----------------------------------------------------------- */
+.question-section {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    /* Linha divisória sutil */
+    border-bottom: 1px solid var(--color-background-secondary);
+}
+
+.section-title {
+    font-size: 1.4em;
+    /* Usa a cor de acento secundária */
+    color: var(--accent-color-secondary);
+    border-left: 4px solid var(--accent-color-primary);
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------------------- */
+/* --- ESTILO DAS PERGUNTAS E OPÇÕES DE MÚLTIPLA ESCOLHA --- */
+/* ----------------------------------------------------------- */
+.question-group {
+    border: none;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.question-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1em;
+    color: var(--card-text);
+}
+
+.options {
+    display: flex;
+    gap: 15px; /* Espaço entre as opções */
+    flex-wrap: wrap;
+}
+
+.options input[type="radio"] {
+    display: none; /* Esconde o radio button nativo */
+}
+
+.options label {
+    padding: 8px 18px;
+    /* Borda sutil */
+    border: 1px solid var(--color-background-secondary); 
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.95em;
+    color: var(--card-text-secondary);
+}
+
+/* Efeito ao selecionar a opção */
+.options input[type="radio"]:checked + label {
+    /* Fundo e borda com a cor principal de acento */
+    background-color: var(--accent-color-primary); 
+    color: white;
+    border-color: var(--accent-color-primary);
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito ao passar o mouse */
+.options label:hover {
+    border-color: var(--accent-color-primary);
+}
+
+
+/* ----------------------------------------------------------- */
+/* --- ESTILO BASE DE INPUTS E TEXTAREA (DO CÓDIGO ANTIGO) --- */
+/* ----------------------------------------------------------- */
 .form-group {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-/* Estilização base dos inputs (Texto, Email, Textarea) */
 input[type="text"],
 input[type="email"],
 textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--color-background-secondary);
-  border-radius: 4px;
-  box-sizing: border-box; /* Garante que padding não aumente a largura total */
-  transition: border-color 0.3s, box-shadow 0.3s;
+    /* Fundo do input, um pouco mais claro que o card para contraste */
+    background-color: var(--color-background); 
+    color: var(--color-text-primary);
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-background-secondary);
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: inherit; /* Garante que a fonte do corpo seja usada */
 }
 
 /* Efeito Visual: HOVER */
 input:hover,
 textarea:hover {
-  border-color: var(--button-hover-bg-color);
+    border-color: var(--button-hover-bg-color);
 }
 
 /* Efeito Visual: FOCUS */
 input:focus,
 textarea:focus {
-  border-color: var(--accent-color-primary);
-  box-shadow: 0 0 5px var(--shadow-color-dark);
-  outline: none; /* Remove o outline padrão do navegador */
+    border-color: var(--accent-color-primary);
+    box-shadow: 0 0 8px var(--shadow-color-dark);
+    outline: none;
 }
 
-/* Estilo do Botão */
+/* ----------------------------------------------------------- */
+/* --- BOTÃO --- */
+/* ----------------------------------------------------------- */
 .btn {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  background-color: var(--color-accent); /* Cor de sucesso/ação */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    /* Cores do botão conforme as variáveis */
+    background-color: var(--button-bg-color); 
+    color: var(--text-color-dark); /* Texto branco */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 .btn:hover {
-  background-color: var(--color-warm);
+    /* Cor de hover do botão */
+    background-color: var(--button-hover-bg-color); 
+    transform: translateY(-1px);
 }
 
-/* Mensagens de Erro e Status */
+/* ----------------------------------------------------------- */
+/* --- ESTILO DO RATING (ESTRELAS) --- */
+/* ----------------------------------------------------------- */
+.rating-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.star-rating {
+    direction: rtl; /* Inverte a ordem para funcionalidade CSS */
+    display: inline-block;
+    font-size: 2.5em; 
+    margin-top: 5px;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    cursor: pointer;
+    padding: 0 4px;
+    transition: color 0.2s;
+    /* Cor da estrela vazia, usando um cinza sutil */
+    color: #e9ecef;
+}
+
+/* Estrelas acesas */
+.star-rating input:checked ~ label {
+    /* Cor dourada/amarela definida na variável --color-star */
+    color: var(--color-star);
+}
+
+/* Hover (ao passar o mouse) */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: var(--color-star);
+}
+
+/* --- Mensagens de Status (Mantido do código anterior) --- */
 .error-message {
-  color: var(--color-error); /* Vermelho para erro */
-  font-size: 0.9em;
-  margin-top: 5px;
-  display: block;
-}
-
-/* Estilo de Validação: Input Inválido */
-.form-group.invalid input,
-.form-group.invalid textarea {
-  border-color: var(--color-error);
-}
-
-/* Mensagens de sucesso/erro na própria página */
-.status-message {
-  margin-top: 15px;
-  padding: 10px;
-  border-radius: 4px;
-  text-align: center;
-  font-weight: bold;
-  display: none; /* Escondido por padrão */
+    color: var(--color-error-text); 
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
 }
 
 .status-message.success {
-  background-color: var(--color-success-bg);
-  color: var(--color-success-text);
-  border: 1px solid var(--color-success-border);
+    background-color: var(--color-success-bg);
+    color: var(--color-success-text);
+    border: 1px solid var(--color-success-border);
 }
 
 .status-message.error {
-  background-color: var(--color-error-bg);
-  color: var(--color-error-text);
-  border: 1px solid var(--color-error-border);
+    background-color: var(--color-error-bg);
+    color: var(--color-error-text);
+    border: 1px solid var(--color-error-border);
 }
 
-/* Estilo do Rating (Estrelas) */
-.rating-group {
-  display: flex;
-  flex-direction: column;
-}
+/* ----------------------------------------------------------- */
+/* --- Responsividade Básica --- */
+/* ----------------------------------------------------------- */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
 
-.stars {
-  display: flex;
-  gap: 5px;
-  margin-top: 5px;
-}
+    .feedback-main-title {
+        font-size: 1.8em;
+    }
 
-.star {
-  font-size: 24px;
-  color: var(--color-background-secondary); /* Cor da estrela vazia */
-  cursor: pointer;
-  transition: color 0.2s;
-}
+    .section-title {
+        font-size: 1.2em;
+    }
 
-.star.active,
-.star:hover,
-.star:hover ~ .star {
-  color: var(--color-star); /* Cor da estrela cheia/hover */
-}
-
-/* Para garantir que as estrelas já selecionadas permaneçam ativas */
-.star.selected {
-  color: var(--color-star);
+    .options {
+        /* Garante que em telas pequenas as opções quebrem bem */
+        flex-direction: column; 
+        gap: 10px;
+    }
+    
+    .options label {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
 }
