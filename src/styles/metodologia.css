@@ -36,6 +36,7 @@ main{
     margin: 10px 2%;
     text-align: justify;
     margin-bottom: 3%;
+    padding-top: 80px; /* Espaço para header fixa */
 }
 
 section p, section ul{

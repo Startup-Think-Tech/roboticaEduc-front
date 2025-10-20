@@ -1,15 +1,21 @@
+const loadTheme = () => {
+  const savedTheme = localStorage.getItem("theme") || "dark";
+  document.documentElement.classList.toggle(
+    "light-theme",
+    savedTheme === "light"
+  );
+};
+
+loadTheme();
+
 document.addEventListener("DOMContentLoaded", function () {
   const themeToggle = document.getElementById("themeToggle");
-  const body = document.body;
 
   if (themeToggle) {
-    // Verificar tema salvo no localStorage
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    body.classList.toggle("light-theme", savedTheme === "light");
-
     themeToggle.addEventListener("click", function () {
-      body.classList.toggle("light-theme");
-      const isLightTheme = body.classList.contains("light-theme");
+      document.documentElement.classList.toggle("light-theme");
+      const isLightTheme =
+        document.documentElement.classList.contains("light-theme");
       localStorage.setItem("theme", isLightTheme ? "light" : "dark");
     });
   }
@@ -28,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fechar menu ao clicar em um link
     const navLinks = siteNav.querySelectorAll("a");
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
       link.addEventListener("click", function () {
         hamburger.classList.remove("active");
         siteNav.classList.remove("active");
@@ -54,20 +60,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Funcionalidade de header sticky
-  const siteHeader = document.querySelector('.site-header');
-  
+  const siteHeader = document.querySelector(".site-header");
+
   if (siteHeader) {
     let lastScrollTop = 0;
-    
-    window.addEventListener('scroll', function() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
+
+    window.addEventListener("scroll", function () {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
       if (scrollTop > 50) {
-        siteHeader.classList.add('sticky');
+        siteHeader.classList.add("sticky");
       } else {
-        siteHeader.classList.remove('sticky');
+        siteHeader.classList.remove("sticky");
       }
-      
+
       lastScrollTop = scrollTop;
     });
   }

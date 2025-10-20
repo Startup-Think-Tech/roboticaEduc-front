@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/forms.css">
 </head>
+
 <body>
     <header class="site-header">
         <div class="container">
@@ -30,118 +32,157 @@
             <div class="form-container">
                 <h1 class="feedback-main-title">Deixe seu Feedback <i class="fas fa-robot"></i></h1>
                 <p class="instruction-text">
-                Avalie Nossa Oficina e deixe sua impressão marcada, para que possamos analisar e melhorar o desenvolvimento de Projetos Futuros. Sua opinião é importante.
+                    Avalie Nossa Oficina e deixe sua impressão marcada, para que possamos analisar e melhorar o
+                    desenvolvimento de Projetos Futuros. Sua opinião é importante.
                 </p>
 
                 <form id="feedbackForm">
-        
+
                     <div class="question-section">
                         <h2 class="section-title">Conteúdo e Conhecimento</h2>
 
                         <fieldset class="question-group">
-                            <label class="question-label">1. A oficina proporcionou uma clara introdução aos conceitos de robótica educacional?</label>
-                                <div class="options">
-                                    <input type="radio" id="q1_sim" name="q1_introducao" value="Sim" required><label for="q1_sim">Sim</label>
-                                    <input type="radio" id="q1_parc" name="q1_introducao" value="Parcialmente"><label for="q1_parc">Parcialmente</label>
-                                    <input type="radio" id="q1_nao" name="q1_introducao" value="Não"><label for="q1_nao">Não</label>
-                                </div>
+                            <label class="question-label">1. A oficina proporcionou uma clara introdução aos conceitos
+                                de robótica educacional?</label>
+                            <div class="options">
+                                <input type="radio" id="q1_sim" name="q1_introducao" value="Sim" required><label
+                                    for="q1_sim">Sim</label>
+                                <input type="radio" id="q1_parc" name="q1_introducao" value="Parcialmente"><label
+                                    for="q1_parc">Parcialmente</label>
+                                <input type="radio" id="q1_nao" name="q1_introducao" value="Não"><label
+                                    for="q1_nao">Não</label>
+                            </div>
                         </fieldset>
 
                         <fieldset class="question-group">
-                            <label class="question-label">2. O nível de dificuldade do conteúdo e das atividades estava adequado para o seu conhecimento prévio?</label>
-                                <div class="options">
-                                    <input type="radio" id="q2_facil" name="q2_dificuldade" value="Muito Fácil" required><label for="q2_facil">Muito Fácil</label>
-                                    <input type="radio" id="q2_adequado" name="q2_dificuldade" value="Adequado"><label for="q2_adequado">Adequado</label>
-                                    <input type="radio" id="q2_dificil" name="q2_dificil" value="Difícil"><label for="q2_dificil">Difícil</label>
-                                </div>
+                            <label class="question-label">2. O nível de dificuldade do conteúdo e das atividades estava
+                                adequado para o seu conhecimento prévio?</label>
+                            <div class="options">
+                                <input type="radio" id="q2_facil" name="q2_dificuldade" value="Muito Fácil"
+                                    required><label for="q2_facil">Muito Fácil</label>
+                                <input type="radio" id="q2_adequado" name="q2_dificuldade" value="Adequado"><label
+                                    for="q2_adequado">Adequado</label>
+                                <input type="radio" id="q2_dificil" name="q2_dificil" value="Difícil"><label
+                                    for="q2_dificil">Difícil</label>
+                            </div>
                         </fieldset>
 
                         <fieldset class="question-group">
-                            <label class="question-label">3. Você se sente mais confiante para explorar projetos de robótica após participar da oficina?</label>
-                                <div class="options">
-                                    <input type="radio" id="q3_conf_t" name="q3_confianca" value="Concordo Totalmente" required><label for="q3_conf_t">Concordo Totalmente</label>
-                                    <input type="radio" id="q3_conf_p" name="q3_confianca" value="Parcialmente"><label for="q3_conf_p">Parcialmente</label>
-                                    <input type="radio" id="q3_conf_d" name="q3_confianca" value="Discordo"><label for="q3_conf_d">Discordo</label>
-                                </div>
+                            <label class="question-label">3. Você se sente mais confiante para explorar projetos de
+                                robótica após participar da oficina?</label>
+                            <div class="options">
+                                <input type="radio" id="q3_conf_t" name="q3_confianca" value="Concordo Totalmente"
+                                    required><label for="q3_conf_t">Concordo Totalmente</label>
+                                <input type="radio" id="q3_conf_p" name="q3_confianca" value="Parcialmente"><label
+                                    for="q3_conf_p">Parcialmente</label>
+                                <input type="radio" id="q3_conf_d" name="q3_confianca" value="Discordo"><label
+                                    for="q3_conf_d">Discordo</label>
+                            </div>
                         </fieldset>
                     </div>
 
                     <div class="question-section">
-                    <h2 class="section-title">Experiência e Engajamento</h2>
+                        <h2 class="section-title">Experiência e Engajamento</h2>
 
-                    <fieldset class="question-group">
-                        <label class="question-label">4. O tempo dedicado para esta atividade foi suficiente para a aprendizagem?</label>
+                        <fieldset class="question-group">
+                            <label class="question-label">4. O tempo dedicado para esta atividade foi suficiente para a
+                                aprendizagem?</label>
                             <div class="options">
-                                <input type="radio" id="q4_curto" name="q4_tempo" value="Curto" required><label for="q4_curto">Curto</label>
-                                <input type="radio" id="q4_adequado" name="q4_tempo" value="Adequado"><label for="q4_adequado">Adequado</label>
-                                <input type="radio" id="q4_longo" name="q4_tempo" value="Longo"><label for="q4_longo">Longo</label>
+                                <input type="radio" id="q4_curto" name="q4_tempo" value="Curto" required><label
+                                    for="q4_curto">Curto</label>
+                                <input type="radio" id="q4_adequado" name="q4_tempo" value="Adequado"><label
+                                    for="q4_adequado">Adequado</label>
+                                <input type="radio" id="q4_longo" name="q4_tempo" value="Longo"><label
+                                    for="q4_longo">Longo</label>
                             </div>
-                    </fieldset>
+                        </fieldset>
 
-                    <fieldset class="question-group">
-                        <label class="question-label">5. O material (kits, ferramentas) utilizado na oficina estava em boas condições e ajudou no aprendizado?</label>
+                        <fieldset class="question-group">
+                            <label class="question-label">5. O material (kits, ferramentas) utilizado na oficina estava
+                                em boas condições e ajudou no aprendizado?</label>
                             <div class="options">
-                                <input type="radio" id="q5_excelente" name="q5_material" value="Excelente" required><label for="q5_excelente">Excelente</label>
-                                <input type="radio" id="q5_bom" name="q5_material" value="Bom"><label for="q5_bom">Bom</label>
-                                <input type="radio" id="q5_regular" name="q5_material" value="Regular/Precisa Melhorar"><label for="q5_regular">Precisa Melhorar</label>
+                                <input type="radio" id="q5_excelente" name="q5_material" value="Excelente"
+                                    required><label for="q5_excelente">Excelente</label>
+                                <input type="radio" id="q5_bom" name="q5_material" value="Bom"><label
+                                    for="q5_bom">Bom</label>
+                                <input type="radio" id="q5_regular" name="q5_material"
+                                    value="Regular/Precisa Melhorar"><label for="q5_regular">Precisa Melhorar</label>
                             </div>
-                    </fieldset>
+                        </fieldset>
 
-                    <fieldset class="question-group">
-                        <label class="question-label">6. A equipe de monitores demonstrou conhecimento e soube tirar suas dúvidas de forma clara?</label>
+                        <fieldset class="question-group">
+                            <label class="question-label">6. A equipe de monitores demonstrou conhecimento e soube tirar
+                                suas dúvidas de forma clara?</label>
                             <div class="options">
-                                <input type="radio" id="q6_total" name="q6_instrutor" value="Sim, Totalmente" required><label for="q6_total">Sim, Totalmente</label>
-                                <input type="radio" id="q6_parcial" name="q6_instrutor" value="Na Maior Parte"><label for="q6_parcial">Na Maior Parte</label>
-                                <input type="radio" id="q6_nao" name="q6_instrutor" value="Não"><label for="q6_nao">Não</label>
+                                <input type="radio" id="q6_total" name="q6_instrutor" value="Sim, Totalmente"
+                                    required><label for="q6_total">Sim, Totalmente</label>
+                                <input type="radio" id="q6_parcial" name="q6_instrutor" value="Na Maior Parte"><label
+                                    for="q6_parcial">Na Maior Parte</label>
+                                <input type="radio" id="q6_nao" name="q6_instrutor" value="Não"><label
+                                    for="q6_nao">Não</label>
                             </div>
-                    </fieldset>
+                        </fieldset>
                     </div>
 
                     <div class="question-section">
-                    <h2 class="section-title">Impacto e Relevância</h2>
+                        <h2 class="section-title">Impacto e Relevância</h2>
 
-                    <fieldset class="question-group">
-                        <label class="question-label">7. A oficina estimulou seu interesse em conhecer mais áreas relacionadas à STEAM?</label>
+                        <fieldset class="question-group">
+                            <label class="question-label">7. A oficina estimulou seu interesse em conhecer mais áreas
+                                relacionadas à STEAM?</label>
                             <div class="options">
-                                <input type="radio" id="q7_sim" name="q7_steam" value="Sim" required><label for="q7_sim">Sim</label>
-                                <input type="radio" id="q7_parc" name="q7_steam" value="Parcialmente"><label for="q7_parc">Parcialmente</label>
-                                <input type="radio" id="q7_nao" name="q7_steam" value="Não"><label for="q7_nao">Não</label>
+                                <input type="radio" id="q7_sim" name="q7_steam" value="Sim" required><label
+                                    for="q7_sim">Sim</label>
+                                <input type="radio" id="q7_parc" name="q7_steam" value="Parcialmente"><label
+                                    for="q7_parc">Parcialmente</label>
+                                <input type="radio" id="q7_nao" name="q7_steam" value="Não"><label
+                                    for="q7_nao">Não</label>
                             </div>
-                    </fieldset>
+                        </fieldset>
 
-                    <fieldset class="question-group">
-                        <label class="question-label">8. Você gostaria de participar de outras atividades como esta?</label>
+                        <fieldset class="question-group">
+                            <label class="question-label">8. Você gostaria de participar de outras atividades como
+                                esta?</label>
                             <div class="options">
-                                <input type="radio" id="q8_sim" name="q8_participar" value="Sim" required><label for="q8_sim">Sim</label>
-                                <input type="radio" id="q8_parc" name="q8_participar" value="Parcialmente"><label for="q8_parc">Parcialmente</label>
-                                <input type="radio" id="q8_nao" name="q8_participar" value="Não"><label for="q8_nao">Não</label>
+                                <input type="radio" id="q8_sim" name="q8_participar" value="Sim" required><label
+                                    for="q8_sim">Sim</label>
+                                <input type="radio" id="q8_parc" name="q8_participar" value="Parcialmente"><label
+                                    for="q8_parc">Parcialmente</label>
+                                <input type="radio" id="q8_nao" name="q8_participar" value="Não"><label
+                                    for="q8_nao">Não</label>
                             </div>
-                    </fieldset>
-                </div>
-        
-                <div class="form-group rating-group">
-                    <label class="question-label">Classificação Geral (de 1 a 5 estrelas):</label>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group rating-group">
+                        <label class="question-label">Classificação Geral (de 1 a 5 estrelas):</label>
                         <div class="star-rating" id="stars-container">
-                            <input type="radio" id="star5" name="estrelas" value="5" /><label for="star5" title="Excelente">★</label>
-                            <input type="radio" id="star4" name="estrelas" value="4" /><label for="star4" title="Muito Bom">★</label>
-                            <input type="radio" id="star3" name="estrelas" value="3" /><label for="star3" title="Bom">★</label>
-                            <input type="radio" id="star2" name="estrelas" value="2" /><label for="star2" title="Regular">★</label>
-                            <input type="radio" id="star1" name="estrelas" value="1" /><label for="star1" title="Ruim">★</label>
+                            <input type="radio" id="star5" name="estrelas" value="5" /><label for="star5"
+                                title="Excelente">★</label>
+                            <input type="radio" id="star4" name="estrelas" value="4" /><label for="star4"
+                                title="Muito Bom">★</label>
+                            <input type="radio" id="star3" name="estrelas" value="3" /><label for="star3"
+                                title="Bom">★</label>
+                            <input type="radio" id="star2" name="estrelas" value="2" /><label for="star2"
+                                title="Regular">★</label>
+                            <input type="radio" id="star1" name="estrelas" value="1" /><label for="star1"
+                                title="Ruim">★</label>
                         </div>
-                    <input type="hidden" id="estrelas" name="estrelas" required data-min="1">
-                    <span class="error-message"></span>
-                </div>
+                        <input type="hidden" id="estrelas" name="estrelas" required data-min="1">
+                        <span class="error-message"></span>
+                    </div>
 
-                <div class="form-group">
-                    <label for="comentario" class="question-label">Comentário Adicional (Opcional):</label>
-                    <textarea id="comentario" name="comentario" rows="5" placeholder="Deixe suas sugestões, críticas ou elogios."></textarea>
-                    <span class="error-message"></span>
-                </div>
+                    <div class="form-group">
+                        <label for="comentario" class="question-label">Comentário Adicional (Opcional):</label>
+                        <textarea id="comentario" name="comentario" rows="5"
+                            placeholder="Deixe suas sugestões, críticas ou elogios."></textarea>
+                        <span class="error-message"></span>
+                    </div>
 
-                <button type="submit" class="btn">Enviar Feedback</button>
-                <div id="statusMessage" class="status-message"></div>
-            </form>
-        </div>
+                    <button type="submit" class="btn">Enviar Feedback</button>
+                    <div id="statusMessage" class="status-message"></div>
+                </form>
+            </div>
     </main>
 
     <footer class="site-footer">
@@ -166,4 +207,5 @@
         });
     </script>
 </body>
+
 </html>
