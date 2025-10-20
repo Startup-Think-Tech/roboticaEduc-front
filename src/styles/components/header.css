@@ -111,6 +111,12 @@
   color: var(--accent-color-primary);
 }
 
+.site-nav a.current-page {
+  color: var(--accent-color-primary);
+  border-bottom: 2px solid var(--accent-color-primary);
+  font-weight: 600;
+}
+
 .theme-toggle {
   background: none;
   border: none;
@@ -236,6 +242,12 @@
     box-shadow: 0 4px 20px var(--accent-color-primary);
   }
 
+  .light-theme .site-nav a.current-page {
+    color: var(--accent-color-primary);
+    border-bottom: 2px solid var(--accent-color-primary);
+    font-weight: 600;
+  }
+
   .site-nav {
     position: fixed;
     top: 0;
@@ -259,7 +271,6 @@
     transform: translateX(0);
   }
 
-  /* Overlay separado para escurecer o conteúdo de fora */
   .mobile-overlay {
     position: fixed;
     top: 0;
