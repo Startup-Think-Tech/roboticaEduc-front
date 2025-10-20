@@ -139,7 +139,7 @@ main {
   font-weight: 500;
   max-width: 800px;
   margin: 0.5rem auto 0;
-  color: #fff;
+  color: var(--white);
 }
 
 @media (max-width: 768px) {

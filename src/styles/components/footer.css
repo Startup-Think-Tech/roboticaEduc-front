@@ -15,6 +15,10 @@
   flex-wrap: wrap;
 }
 
+.footer-info {
+  text-align: center;
+}
+
 .footer-info p {
   margin: 0.3rem 0;
 }

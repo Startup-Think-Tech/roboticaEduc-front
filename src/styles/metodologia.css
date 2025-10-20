@@ -1,3 +1,5 @@
+@import url("./main.css");
+
 .steam {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -24,11 +26,11 @@
 .card:hover {
   transform: scale(1.1);
 }
-.s { background: #3cb371; }
-.t { background: #1e90ff; }
-.e { background: #ffa500; }
-.a { background: #ff6347; }
-.m { background: #9370db; }
+.s { background: var(--steam-s); }
+.t { background: var(--steam-t); }
+.e { background: var(--steam-e); }
+.a { background: var(--steam-a); }
+.m { background: var(--steam-m); }
 
 main{
     display: flex;
@@ -40,7 +42,7 @@ main{
 }
 
 section p, section ul{
-    color: #6b82a7;
+    color: var(--steam-text);
     font-size: 1.125rem;
     line-height: 1.6;
 }

@@ -1,12 +1,6 @@
+@import url("./main.css");
+
 /* Reset básico e centralização */
-body {
-  font-family: Arial, sans-serif;
-  /* Assume que o background principal é o dark theme */
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
-  padding: 0; /* O container fará o espaçamento */
-  min-height: 100vh;
-}
 
 main {
   padding-top: 80px; /* Espaço para header fixa */
@@ -14,14 +8,14 @@ main {
 
 .form-container {
   /* Fundo do card, usando a cor de card do tema escuro */
-  color: var(--card-text);
+  color: var(--color-text-primary);
   padding: 30px 40px;
   border-radius: 12px;
   /* Aumenta a largura máxima para acomodar as 8 perguntas */
-  max-width: 800px;
+  max-width: 800px; 
   margin: 40px auto;
   /* Sombra mais proeminente e com cor de destaque */
-  box-shadow: 0 10px 30px var(--shadow-color-dark);
+  box-shadow: 0 10px 30px var(--shadow-dark);
 }
 
 /* ----------------------------------------------------------- */
@@ -38,7 +32,7 @@ main {
 .instruction-text {
   text-align: center;
   /* Cor secundária para o texto de instrução */
-  color: var(--card-text-secondary);
+  color: var(--color-text-secondary);
   margin-bottom: 30px;
   font-size: 1.1em;
 }
@@ -97,7 +91,7 @@ main {
   cursor: pointer;
   transition: all 0.2s;
   font-size: 0.95em;
-  color: var(--card-text-secondary);
+  color: var(--color-text-secondary);
 }
 
 /* Efeito ao selecionar a opção */
@@ -107,7 +101,7 @@ main {
   color: white;
   border-color: var(--accent-color-primary);
   font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px var(--shadow-medium);
 }
 
 /* Efeito ao passar o mouse */
@@ -147,7 +141,7 @@ textarea:hover {
 input:focus,
 textarea:focus {
   border-color: var(--accent-color-primary);
-  box-shadow: 0 0 8px var(--shadow-color-dark);
+  box-shadow: 0 0 8px var(--shadow-dark);
   outline: none;
 }
 
@@ -159,8 +153,8 @@ textarea:focus {
   width: 100%;
   padding: 15px;
   /* Cores do botão conforme as variáveis */
-  background-color: var(--button-bg-color);
-  color: var(--text-color-dark); /* Texto branco */
+  background-color: var(--accent-color-primary);
+  color: var(--color-text-primary); /* Texto branco */
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -171,7 +165,7 @@ textarea:focus {
 
 .btn:hover {
   /* Cor de hover do botão */
-  background-color: var(--button-hover-bg-color);
+  background-color: var(--accent-color-secondary);
   transform: translateY(-1px);
 }
 
@@ -200,7 +194,7 @@ textarea:focus {
   padding: 0 4px;
   transition: color 0.2s;
   /* Cor da estrela vazia, usando um cinza sutil */
-  color: #e9ecef;
+  color: var(--form-placeholder);
 }
 
 /* Estrelas acesas */
