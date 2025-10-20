@@ -31,7 +31,7 @@
   --steam-a: #ff6347;
   --steam-m: #9370db;
   --steam-text: #6b82a7;
-  --form-placeholder: #e9ecef;
+  --form-placeholder: #6c757d;
   --white: #ffffff;
   --light-accent-bg: rgba(81, 94, 166, 0.05);
   
@@ -59,6 +59,7 @@
   --color-text-secondary: #b0b0b0;
   --card-text: #ffffff;
   --card-text-secondary: #b0b0b0;
+  --form-placeholder: #ffffff;
 }
 
 /* Tema alternativo */
@@ -81,6 +82,7 @@
   --color-text-secondary: #495057;
   --card-text: #122330;
   --card-text-secondary: #495057;
+  --form-placeholder: #6c757d;
   
   /* Sombras mais suaves no tema claro */
   --shadow-light: rgba(0, 0, 0, 0.05);

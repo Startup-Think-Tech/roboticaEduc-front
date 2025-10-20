@@ -12,7 +12,7 @@ main {
   padding: 30px 40px;
   border-radius: 12px;
   /* Aumenta a largura máxima para acomodar as 8 perguntas */
-  max-width: 800px; 
+  max-width: 800px;
   margin: 40px auto;
   /* Sombra mais proeminente e com cor de destaque */
   box-shadow: 0 10px 30px var(--shadow-dark);
@@ -230,6 +230,419 @@ textarea:focus {
 }
 
 /* ----------------------------------------------------------- */
+/* --- FORMULÁRIO SIMPLIFICADO MELHORADO --- */
+/* ----------------------------------------------------------- */
+
+.simple-feedback-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px var(--shadow-dark);
+  border: 1px solid var(--color-background-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.simple-feedback-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-color-primary),
+    var(--accent-color-secondary)
+  );
+}
+
+.simple-feedback-form .form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.simple-feedback-form .form-label {
+  display: block;
+  font-weight: 700;
+  color: var(--accent-color-primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.simple-feedback-form .form-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid var(--accent-color-primary);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.simple-feedback-form .form-input:focus {
+  outline: none;
+  border-color: var(--accent-color-primary);
+  box-shadow: 0 0 0 2px var(--light-accent-bg);
+}
+
+.simple-feedback-form .form-input::placeholder {
+  color: var(--form-placeholder);
+  font-style: italic;
+}
+
+.simple-feedback-form .form-textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid var(--accent-color-primary);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  font-family: inherit;
+  resize: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  min-height: 120px;
+}
+
+.simple-feedback-form .form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color-primary);
+  box-shadow: 0 0 0 2px var(--light-accent-bg);
+}
+
+.simple-feedback-form .form-textarea::placeholder {
+  color: var(--form-placeholder);
+  font-style: italic;
+}
+
+.simple-feedback-form .star-rating {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--light-accent-bg);
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.simple-feedback-form .star-rating:hover {
+  border-color: var(--accent-color-primary);
+  background: var(--color-background-secondary);
+}
+
+.simple-feedback-form .star-rating input[type="radio"] {
+  display: none;
+}
+
+.simple-feedback-form .star-rating label {
+  font-size: 2.5rem;
+  color: var(--form-placeholder);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px var(--shadow-light));
+}
+
+.simple-feedback-form .star-rating label:hover {
+  color: var(--color-star);
+  transform: scale(1.2);
+  filter: drop-shadow(0 4px 8px var(--shadow-medium));
+}
+
+.simple-feedback-form .star-rating input:checked ~ label,
+.simple-feedback-form .star-rating input:checked ~ label ~ label {
+  color: var(--color-star);
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px var(--shadow-dark));
+}
+
+.simple-feedback-form .btn {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--accent-color-primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.simple-feedback-form .btn:hover {
+  background: var(--accent-color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.simple-feedback-form .error-message {
+  color: var(--color-error-text);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  display: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  background: var(--color-error-bg);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-error-text);
+}
+
+.simple-feedback-form .form-group.error .error-message {
+  display: block;
+  animation: shake 0.5s ease-in-out;
+}
+
+.simple-feedback-form .form-group.error .form-input,
+.simple-feedback-form .form-group.error .form-textarea {
+  border-color: var(--color-error-text);
+  box-shadow: 0 0 0 2px var(--color-error-border);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+/* Melhorias para o tema light */
+.light-theme .simple-feedback-form {
+  box-shadow: 0 10px 40px var(--shadow-dark);
+  border: 1px solid var(--accent-color-primary);
+}
+
+.light-theme .simple-feedback-form .star-rating {
+  background: var(--light-accent-bg);
+}
+
+.light-theme .simple-feedback-form .star-rating:hover {
+  background: var(--color-background-secondary);
+}
+
+/* Responsividade para o formulário simplificado */
+@media (max-width: 768px) {
+  .simple-feedback-form {
+    max-width: 100%;
+    padding: 1.5rem;
+    margin: 0 1rem;
+    border-radius: 16px;
+  }
+
+  .simple-feedback-form .form-label {
+    font-size: 1.1rem;
+  }
+
+  .simple-feedback-form .form-input,
+  .simple-feedback-form .form-textarea {
+    padding: 14px 16px;
+    font-size: 1rem;
+  }
+
+  .simple-feedback-form .star-rating {
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .simple-feedback-form .star-rating label {
+    font-size: 2rem;
+  }
+
+  .simple-feedback-form .btn {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-feedback-form {
+    padding: 1rem;
+    margin: 0 0.5rem;
+  }
+
+  .simple-feedback-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .simple-feedback-form .star-rating {
+    gap: 0.25rem;
+    padding: 0.5rem;
+  }
+
+  .simple-feedback-form .star-rating label {
+    font-size: 1.8rem;
+  }
+}
+
+/* ----------------------------------------------------------- */
+/* --- CARDS DE FEEDBACK --- */
+/* ----------------------------------------------------------- */
+
+/* ----------------------------------------------------------- */
+/* --- CARDS DE FEEDBACK --- */
+/* ----------------------------------------------------------- */
+
+.feedback-cards-section {
+  margin: 3rem 0;
+}
+
+.section-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--accent-color-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--accent-color-primary);
+  padding-bottom: 0.5rem;
+}
+
+.feedback-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.feedback-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px var(--shadow-dark);
+  border: 1px solid var(--color-background-secondary);
+  transition: all 0.3s ease;
+}
+
+.feedback-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow-dark);
+}
+
+.feedback-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.person-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--accent-color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.feedback-info {
+  flex: 1;
+}
+
+.feedback-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-color-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.feedback-stars {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.star {
+  font-size: 1.2rem;
+  color: var(--color-star);
+}
+
+.star.empty {
+  color: var(--form-placeholder);
+}
+
+.feedback-comment {
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+}
+
+.feedback-form-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--color-background-secondary);
+}
+
+.form-instruction {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* ----------------------------------------------------------- */
+/* --- TOAST DE CONFIRMAÇÃO --- */
+/* ----------------------------------------------------------- */
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--accent-color-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px var(--shadow-dark);
+  padding: 1rem;
+  z-index: 10000;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+  max-width: 350px;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toast-icon {
+  color: var(--color-success-text);
+  flex-shrink: 0;
+}
+
+.toast-message h4 {
+  margin: 0 0 0.25rem 0;
+  color: var(--accent-color-primary);
+  font-size: 1.1rem;
+}
+
+.toast-message p {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: 0.9rem;
+}
+
+/* ----------------------------------------------------------- */
 /* --- Responsividade Básica --- */
 /* ----------------------------------------------------------- */
 @media (max-width: 600px) {
@@ -244,6 +657,40 @@ textarea:focus {
 
   .section-title {
     font-size: 1.2em;
+  }
+
+  .feedback-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feedback-card {
+    padding: 1rem;
+  }
+
+  .feedback-card-header {
+    gap: 0.75rem;
+  }
+
+  .person-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .feedback-name {
+    font-size: 1.1rem;
+  }
+
+  .toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    transform: translateY(-100px);
+  }
+
+  .toast.show {
+    transform: translateY(0);
   }
 
   .options {
