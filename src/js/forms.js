@@ -1,7 +1,3 @@
-/**
- * Sistema de Dados Mockados
- */
-
 const isValidEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -164,3 +160,46 @@ const submitFeedbackWithToast = (formData) => {
     }
   }, 1000);
 };
+
+const submitContactWithToast = (formData) => {
+  const toast = document.getElementById("toast");
+  if (toast) {
+    toast.querySelector(".toast-message h4").textContent = "Mensagem Enviada!";
+    toast.querySelector(".toast-message p").textContent =
+      "Obrigado pelo seu contato! Retornaremos em breve.";
+    showToast();
+  }
+};
+
+const initContactForm = () => {
+  const contactForm = document.getElementById("contactForm");
+  if (!contactForm) return;
+
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
+
+    console.log("Dados do formulário de contato (mockado):", data);
+
+    submitContactWithToast(data);
+    contactForm.reset();
+  });
+
+  const inputs = contactForm.querySelectorAll("input, textarea");
+  inputs.forEach((input) => {
+    input.addEventListener("blur", () => validateInput(input));
+    input.addEventListener("input", () => {
+      const parentGroup = input.closest(".form-group");
+      if (parentGroup.classList.contains("error")) {
+        validateInput(input);
+      }
+    });
+  });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  initFormValidation("feedbackForm");
+  initContactForm();
+});

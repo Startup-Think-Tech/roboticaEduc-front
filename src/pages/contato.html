@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Contato | Robótica Educacional</title>
     <link rel="stylesheet" href="../styles/forms.css">
 </head>
 
@@ -55,28 +55,35 @@
     <main>
         <div class="container">
             <div class="form-container">
-                <h1>Fale Conosco</h1>
-                <form id="contactForm">
+                <h1 class="contact-main-title">Fale Conosco <i class="fas fa-envelope"></i></h1>
+                <p class="instruction-text">
+                    Entre em contato conosco para tirar dúvidas, fazer sugestões ou solicitar informações sobre nossos
+                    projetos.
+                </p>
+
+                <form id="contactForm" class="simple-contact-form">
                     <div class="form-group">
-                        <label for="nome">Nome:</label>
-                        <input type="text" id="nome" name="nome" required>
-                        <span class="error-message"></span>
+                        <label for="nome" class="form-label">Nome *</label>
+                        <input type="text" id="nome" name="nome" class="form-input"
+                            placeholder="Digite seu nome completo" required>
+                        <div class="error-message"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                        <span class="error-message"></span>
+                        <label for="email" class="form-label">E-mail *</label>
+                        <input type="email" id="email" name="email" class="form-input"
+                            placeholder="Digite seu e-mail válido" required>
+                        <div class="error-message"></div>
                     </div>
 
                     <div class="form-group">
-                        <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
-                        <span class="error-message"></span>
+                        <label for="mensagem" class="form-label">Mensagem *</label>
+                        <textarea id="mensagem" name="mensagem" class="form-textarea" rows="4"
+                            placeholder="Escreva sua mensagem aqui..." required></textarea>
+                        <div class="error-message"></div>
                     </div>
 
-                    <button type="submit" class="btn">Enviar Contato</button>
-                    <div id="statusMessage" class="status-message"></div>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
                 </form>
             </div>
         </div>
@@ -99,12 +106,23 @@
 
     <script src="../js/script.js"></script>
     <script src="../js/forms.js"></script>
-    <script>
-        // Inicializa a lógica de validação para o formulário de Contato
-        document.addEventListener('DOMContentLoaded', () => {
-            initFormValidation('contactForm');
-        });
-    </script>
+
+    <!-- Toast de confirmação -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                </svg>
+            </div>
+            <div class="toast-message">
+                <h4>Sucesso!</h4>
+                <p>Mensagem enviada com sucesso!</p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
