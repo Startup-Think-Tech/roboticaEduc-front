@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://robotica-edu-back.vercel.app";
+
 const isValidEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -38,20 +40,6 @@ const validateInput = (inputElement) => {
   return isValid;
 };
 
-const displayStatusMessage = (type, message) => {
-  const statusDiv = document.getElementById("statusMessage");
-  if (statusDiv) {
-    statusDiv.textContent = message;
-    statusDiv.className = `status-message ${type}`;
-    statusDiv.style.display = "block";
-
-    setTimeout(() => {
-      statusDiv.style.display = "none";
-      statusDiv.className = "status-message";
-    }, 5000);
-  }
-};
-
 const initFormValidation = (formId) => {
   const form = document.getElementById(formId);
   if (!form) return;
@@ -83,18 +71,7 @@ const initFormValidation = (formId) => {
 
       if (formId === "feedbackForm") {
         submitFeedbackWithToast(data);
-      } else {
-        displayStatusMessage("success", "Sucesso! Seu formulário foi enviado.");
-        form.reset();
-        form
-          .querySelectorAll(".form-group")
-          .forEach((group) => group.classList.remove("error"));
       }
-    } else {
-      displayStatusMessage(
-        "error",
-        "Erro! Por favor, preencha os campos obrigatórios/inválidos."
-      );
     }
   });
 };
@@ -135,8 +112,46 @@ const showToast = () => {
   }
 };
 
-const submitFeedbackWithToast = (formData) => {
-  setTimeout(() => {
+const showErrorToast = () => {
+  const toastError = document.getElementById("toastError");
+  if (toastError) {
+    toastError.classList.add("show");
+
+    setTimeout(() => {
+      toastError.classList.remove("show");
+    }, 4000);
+  }
+};
+
+const submitFeedbackWithToast = async (formData) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/feedbacks`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.userName,
+        stars: parseInt(formData.rating),
+        comment: formData.comment,
+      }),
+    });
+
+    const responseText = await response.text();
+
+    if (!response.ok) {
+      let errorMessage = "Erro ao enviar feedback";
+      try {
+        const errorData = JSON.parse(responseText);
+        errorMessage = errorData.message || errorMessage;
+      } catch (e) {}
+      throw new Error(errorMessage);
+    }
+
+    try {
+      const data = JSON.parse(responseText);
+    } catch (e) {}
+
     showToast();
 
     const form = document.getElementById("feedbackForm");
@@ -158,16 +173,51 @@ const submitFeedbackWithToast = (formData) => {
         message.textContent = "";
       });
     }
-  }, 1000);
+  } catch (error) {
+    showErrorToast();
+  }
 };
 
-const submitContactWithToast = (formData) => {
-  const toast = document.getElementById("toast");
-  if (toast) {
-    toast.querySelector(".toast-message h4").textContent = "Mensagem Enviada!";
-    toast.querySelector(".toast-message p").textContent =
-      "Obrigado pelo seu contato! Retornaremos em breve.";
-    showToast();
+const submitContactWithToast = async (formData) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/contacts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.nome,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.mensagem,
+      }),
+    });
+
+    const responseText = await response.text();
+
+    if (!response.ok) {
+      let errorMessage = "Erro ao enviar mensagem";
+      try {
+        const errorData = JSON.parse(responseText);
+        errorMessage = errorData.message || errorMessage;
+      } catch (e) {}
+      throw new Error(errorMessage);
+    }
+
+    try {
+      const data = JSON.parse(responseText);
+    } catch (e) {}
+
+    const toast = document.getElementById("toast");
+    if (toast) {
+      toast.querySelector(".toast-message h4").textContent =
+        "Mensagem Enviada!";
+      toast.querySelector(".toast-message p").textContent =
+        "Obrigado pelo seu contato! Retornaremos em breve.";
+      showToast();
+    }
+  } catch (error) {
+    showErrorToast();
   }
 };
 
@@ -175,15 +225,13 @@ const initContactForm = () => {
   const contactForm = document.getElementById("contactForm");
   if (!contactForm) return;
 
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData);
 
-    console.log("Dados do formulário de contato (mockado):", data);
-
-    submitContactWithToast(data);
+    await submitContactWithToast(data);
     contactForm.reset();
   });
 

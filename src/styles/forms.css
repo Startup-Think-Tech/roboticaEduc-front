@@ -781,6 +781,20 @@ textarea:focus {
   font-size: 0.9rem;
 }
 
+/* Toast de erro */
+.toast-error {
+  border-color: var(--color-error-border);
+  background: var(--card-bg);
+}
+
+.toast-error .toast-icon {
+  color: var(--color-error-text);
+}
+
+.toast-error .toast-message h4 {
+  color: var(--color-error-text);
+}
+
 @media (max-width: 600px) {
   .form-container {
     padding: 20px;
