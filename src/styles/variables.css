@@ -3,18 +3,18 @@
   --color-warm: #bf6d24;
   --color-primary: #6e7bff;
   --color-accent: #2c9ac1;
-  
+
   /* Backgrounds */
   --color-background: #f3f6fa;
   --color-background-secondary: #e3e9f1;
   --card-bg: #ffffff;
-  
+
   /* Textos */
   --color-text-primary: #1a1a1a;
   --color-text-secondary: #666666;
   --card-text: #1a1a1a;
   --card-text-secondary: #666666;
-  
+
   /* Estados */
   --color-success-bg: #d4edda;
   --color-success-text: #155724;
@@ -23,7 +23,7 @@
   --color-error-text: #721c24;
   --color-error-border: #f5c6cb;
   --color-star: gold;
-  
+
   /* Cores específicas para componentes */
   --steam-s: #3cb371;
   --steam-t: #1e90ff;
@@ -34,12 +34,12 @@
   --form-placeholder: #8a8a8a;
   --white: #ffffff;
   --light-accent-bg: rgba(81, 94, 166, 0.05);
-  
+
   /* Sombras */
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-medium: rgba(0, 0, 0, 0.15);
   --shadow-dark: rgba(0, 0, 0, 0.2);
-  
+
   /* Tema escuro  */
   --bg-color-dark: #122330;
   --text-color-dark: #ffffff;
@@ -50,7 +50,7 @@
   --button-bg-color: #30a5bf;
   --button-hover-bg-color: #515ea6;
   --shadow-color-dark: rgba(48, 165, 191, 0.4);
-  
+
   /* Sobrescrever cores para tema escuro */
   --color-background: #1a2a3a;
   --color-background-secondary: #2a3a4a;
@@ -73,7 +73,7 @@
   --button-bg-color: #515ea6;
   --button-hover-bg-color: #30a5bf;
   --shadow-color-dark: rgba(81, 94, 166, 0.3);
-  
+
   /* Cores que mudam no tema claro */
   --color-background: #f8f9fa;
   --color-background-secondary: #e9ecef;
@@ -83,7 +83,7 @@
   --card-text: #122330;
   --card-text-secondary: #495057;
   --form-placeholder: #8a8a8a;
-  
+
   /* Sombras mais suaves no tema claro */
   --shadow-light: rgba(0, 0, 0, 0.05);
   --shadow-medium: rgba(0, 0, 0, 0.1);

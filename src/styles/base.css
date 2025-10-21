@@ -151,10 +151,10 @@ li {
 }
 
 .site-footer .container {
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Permite quebrar em telas menores */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Permite quebrar em telas menores */
 }
 
 .footer-info p {

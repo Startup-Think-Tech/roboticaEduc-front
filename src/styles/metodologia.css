@@ -19,54 +19,63 @@
   transition: transform 0.3s;
 }
 
-.card p{
+.card p {
   color: white;
 }
 
 .card:hover {
   transform: scale(1.1);
 }
-.s { background: var(--steam-s); }
-.t { background: var(--steam-t); }
-.e { background: var(--steam-e); }
-.a { background: var(--steam-a); }
-.m { background: var(--steam-m); }
+.s {
+  background: var(--steam-s);
+}
+.t {
+  background: var(--steam-t);
+}
+.e {
+  background: var(--steam-e);
+}
+.a {
+  background: var(--steam-a);
+}
+.m {
+  background: var(--steam-m);
+}
 
-main{
+main {
   max-width: 1200px;
   margin: 4rem auto;
   padding: 80px 1.5rem 0 1.5rem; /* Espaço para header fixa */
   display: flex;
   flex-direction: column;
   gap: 3rem;
-    
 }
 
-section p, section ul{
-    color: var(--card-text-secondary);
-    /*color: var(--steam-text);*/
-    font-size: 1.125rem;
-    line-height: 1.6;
-    
+section p,
+section ul {
+  color: var(--card-text-secondary);
+  /*color: var(--steam-text);*/
+  font-size: 1.125rem;
+  line-height: 1.6;
 }
 
-section ul{
-    margin-left: 2%;
+section ul {
+  margin-left: 2%;
 }
 
-h3{
-    margin-bottom: 8px;
+h3 {
+  margin-bottom: 8px;
 }
 
-#title{
-    margin-bottom: 1rem;
-    color: var(--accent-color-primary);
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
+#title {
+  margin-bottom: 1rem;
+  color: var(--accent-color-primary);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
-.card-section{
+.card-section {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 10px var(--shadow-medium);
@@ -81,7 +90,6 @@ h3{
 
 /* --- CELULAR: até 767px --- */
 @media (max-width: 767px) {
-
   /* Título centralizado e menor */
   #title {
     font-size: 1.5rem;
@@ -105,7 +113,8 @@ h3{
     margin: 10px 8%;
   }
 
-  section p, section ul {
+  section p,
+  section ul {
     font-size: 1rem;
   }
 
@@ -133,7 +142,6 @@ h3{
 
 /* --- TABLET: entre 768px e 1024px --- */
 @media (min-width: 768px) and (max-width: 1024px) {
-
   #title {
     text-align: center;
     font-size: 1.8rem;
@@ -154,7 +162,8 @@ h3{
     margin: 20px 10%;
   }
 
-  section p, section ul {
+  section p,
+  section ul {
     font-size: 1.05rem;
   }
 
@@ -170,7 +179,6 @@ h3{
 
 /* --- DESKTOP: a partir de 1025px --- */
 @media (min-width: 1025px) {
-
   .steam-grid {
     justify-content: center;
   }

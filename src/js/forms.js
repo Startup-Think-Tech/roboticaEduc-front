@@ -1,5 +1,82 @@
 const API_BASE_URL = "https://robotica-edu-back.vercel.app";
 
+const escapeHtml = (text) => {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+};
+
+const loadLatestFeedbacks = async () => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/feedbacks`);
+    const responseText = await response.text();
+
+    if (!response.ok) {
+      return;
+    }
+
+    const data = JSON.parse(responseText);
+
+    if (data.success && data.data && Array.isArray(data.data)) {
+      const sortedByDate = data.data.sort((a, b) => {
+        return new Date(b.created_at) - new Date(a.created_at);
+      });
+      const latestFeedbacks = sortedByDate.slice(0, 4);
+      renderFeedbacks(latestFeedbacks);
+    }
+  } catch (error) {}
+};
+
+const renderFeedbacks = (feedbacks) => {
+  const container = document.getElementById("feedbackCardsGrid");
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  feedbacks.forEach((feedback) => {
+    const card = createFeedbackCard(feedback);
+    container.appendChild(card);
+  });
+};
+
+const createFeedbackCard = (feedback) => {
+  const card = document.createElement("div");
+  card.className = "feedback-card";
+
+  const stars = createStars(feedback.stars);
+
+  card.innerHTML = `
+    <div class="feedback-card-header">
+      <div class="person-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+        </svg>
+      </div>
+      <div class="feedback-info">
+        <h3 class="feedback-name">${escapeHtml(feedback.name)}</h3>
+        <div class="feedback-stars">
+          ${stars}
+        </div>
+      </div>
+    </div>
+    <p class="feedback-comment">"${escapeHtml(feedback.comment)}"</p>
+  `;
+
+  return card;
+};
+
+const createStars = (rating) => {
+  let starsHTML = "";
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      starsHTML += '<span class="star filled">★</span>';
+    } else {
+      starsHTML += '<span class="star empty">☆</span>';
+    }
+  }
+  return starsHTML;
+};
+
 const isValidEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
@@ -153,6 +230,7 @@ const submitFeedbackWithToast = async (formData) => {
     } catch (e) {}
 
     showToast();
+    loadLatestFeedbacks();
 
     const form = document.getElementById("feedbackForm");
     if (form) {
@@ -248,6 +326,7 @@ const initContactForm = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  loadLatestFeedbacks();
   initFormValidation("feedbackForm");
   initContactForm();
 });

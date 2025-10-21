@@ -63,84 +63,8 @@
                 <!-- Seção de Cards de Feedback -->
                 <div class="feedback-cards-section">
                     <h2 class="section-subtitle">Depoimentos dos Participantes</h2>
-                    <div class="feedback-cards-grid">
-                        <div class="feedback-card">
-                            <div class="feedback-card-header">
-                                <div class="person-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                                    </svg>
-                                </div>
-                                <div class="feedback-info">
-                                    <h3 class="feedback-name">Maria Silva</h3>
-                                    <div class="feedback-stars">
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="feedback-comment">
-                                "Excelente oficina! Aprendi muito sobre robótica e programação. Os instrutores foram
-                                muito didáticos e pacientes."
-                            </p>
-                        </div>
-
-                        <div class="feedback-card">
-                            <div class="feedback-card-header">
-                                <div class="person-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                                    </svg>
-                                </div>
-                                <div class="feedback-info">
-                                    <h3 class="feedback-name">João Santos</h3>
-                                    <div class="feedback-stars">
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star empty">☆</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="feedback-comment">
-                                "Muito bom! Gostei especialmente da parte prática onde pudemos construir nossos próprios
-                                robôs."
-                            </p>
-                        </div>
-
-                        <div class="feedback-card">
-                            <div class="feedback-card-header">
-                                <div class="person-icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                                    </svg>
-                                </div>
-                                <div class="feedback-info">
-                                    <h3 class="feedback-name">Ana Costa</h3>
-                                    <div class="feedback-stars">
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                        <span class="star filled">★</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="feedback-comment">
-                                "Incrível experiência! Nunca pensei que robótica fosse tão interessante. Recomendo para
-                                todos!"
-                            </p>
-                        </div>
+                    <div id="feedbackCardsGrid" class="feedback-cards-grid">
+                        <!-- Cards serão carregados dinamicamente aqui -->
                     </div>
                 </div>
 
@@ -228,7 +152,8 @@
             <div class="toast-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                 </svg>
             </div>
             <div class="toast-message">
