@@ -1,27 +1,17 @@
 @import url("./main.css");
 
-/* Reset básico e centralização */
-
 main {
   padding-top: 80px;
-  /* Espaço para header fixa */
 }
 
 .form-container {
-  /* Fundo do card, usando a cor de card do tema escuro */
   color: var(--color-text-primary);
   padding: 30px 40px;
   border-radius: 12px;
-  /* Aumenta a largura máxima para acomodar as 8 perguntas */
   max-width: 800px;
   margin: 40px auto;
-  /* Sombra mais proeminente e com cor de destaque */
   box-shadow: 0 10px 30px var(--shadow-dark);
 }
-
-/* ----------------------------------------------------------- */
-/* --- FORMULÁRIO DE CONTATO --- */
-/* ----------------------------------------------------------- */
 
 .contact-main-title {
   font-size: 2.5rem;
@@ -177,12 +167,10 @@ main {
   box-shadow: 0 0 0 2px var(--color-error-border);
 }
 
-/* Melhorias para o tema light */
 .light-theme .simple-contact-form {
   box-shadow: 0 10px 40px var(--shadow-dark);
 }
 
-/* Responsividade para o formulário de contato */
 @media (max-width: 768px) {
   .simple-contact-form {
     max-width: 100%;
@@ -222,12 +210,8 @@ main {
   }
 }
 
-/* ----------------------------------------------------------- */
-/* --- ESTILO DOS TÍTULOS E TEXTO INFORMATIVO --- */
-/* ----------------------------------------------------------- */
 .feedback-main-title {
   text-align: center;
-  /* Usa a cor principal de acento para destaque */
   color: var(--accent-color-primary);
   margin-bottom: 5px;
   font-size: 2.2em;
@@ -235,34 +219,25 @@ main {
 
 .instruction-text {
   text-align: center;
-  /* Cor secundária para o texto de instrução */
   color: var(--color-text-secondary);
   margin-bottom: 30px;
   font-size: 1.1em;
 }
 
-/* ----------------------------------------------------------- */
-/* --- AGRUPAMENTO DAS 8 PERGUNTAS (SECTIONS) --- */
-/* ----------------------------------------------------------- */
 .question-section {
   padding-bottom: 20px;
   margin-bottom: 25px;
-  /* Linha divisória sutil */
   border-bottom: 1px solid var(--color-background-secondary);
 }
 
 .section-title {
   font-size: 1.4em;
-  /* Usa a cor de acento secundária */
   color: var(--accent-color-secondary);
   border-left: 4px solid var(--accent-color-primary);
   padding-left: 10px;
   margin-bottom: 20px;
 }
 
-/* ----------------------------------------------------------- */
-/* --- ESTILO DAS PERGUNTAS E OPÇÕES DE MÚLTIPLA ESCOLHA --- */
-/* ----------------------------------------------------------- */
 .question-group {
   border: none;
   padding: 15px 0;
@@ -280,18 +255,15 @@ main {
 .options {
   display: flex;
   gap: 15px;
-  /* Espaço entre as opções */
   flex-wrap: wrap;
 }
 
 .options input[type="radio"] {
   display: none;
-  /* Esconde o radio button nativo */
 }
 
 .options label {
   padding: 8px 18px;
-  /* Borda sutil */
   border: 1px solid var(--color-background-secondary);
   border-radius: 20px;
   cursor: pointer;
@@ -300,9 +272,7 @@ main {
   color: var(--color-text-secondary);
 }
 
-/* Efeito ao selecionar a opção */
 .options input[type="radio"]:checked + label {
-  /* Fundo e borda com a cor principal de acento */
   background-color: var(--accent-color-primary);
   color: white;
   border-color: var(--accent-color-primary);
@@ -310,14 +280,10 @@ main {
   box-shadow: 0 2px 5px var(--shadow-medium);
 }
 
-/* Efeito ao passar o mouse */
 .options label:hover {
   border-color: var(--accent-color-primary);
 }
 
-/* ----------------------------------------------------------- */
-/* --- ESTILO BASE DE INPUTS E TEXTAREA (DO CÓDIGO ANTIGO) --- */
-/* ----------------------------------------------------------- */
 .form-group {
   margin-bottom: 20px;
 }
@@ -325,7 +291,6 @@ main {
 input[type="text"],
 input[type="email"],
 textarea {
-  /* Fundo do input, um pouco mais claro que o card para contraste */
   background-color: var(--color-background);
   color: var(--color-text-primary);
   width: 100%;
@@ -335,16 +300,13 @@ textarea {
   box-sizing: border-box;
   transition: border-color 0.3s, box-shadow 0.3s;
   font-family: inherit;
-  /* Garante que a fonte do corpo seja usada */
 }
 
-/* Efeito Visual: HOVER */
 input:hover,
 textarea:hover {
   border-color: var(--button-hover-bg-color);
 }
 
-/* Efeito Visual: FOCUS */
 input:focus,
 textarea:focus {
   border-color: var(--accent-color-primary);
@@ -352,17 +314,12 @@ textarea:focus {
   outline: none;
 }
 
-/* ----------------------------------------------------------- */
-/* --- BOTÃO --- */
-/* ----------------------------------------------------------- */
 .btn {
   display: block;
   width: 100%;
   padding: 15px;
-  /* Cores do botão conforme as variáveis */
   background-color: var(--accent-color-primary);
   color: var(--color-text-primary);
-  /* Texto branco */
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -372,14 +329,10 @@ textarea:focus {
 }
 
 .btn:hover {
-  /* Cor de hover do botão */
   background-color: var(--accent-color-secondary);
   transform: translateY(-1px);
 }
 
-/* ----------------------------------------------------------- */
-/* --- ESTILO DO RATING (ESTRELAS) --- */
-/* ----------------------------------------------------------- */
 .rating-group {
   display: flex;
   flex-direction: column;
@@ -388,7 +341,6 @@ textarea:focus {
 
 .star-rating {
   direction: rtl;
-  /* Inverte a ordem para funcionalidade CSS */
   display: inline-block;
   font-size: 2.5em;
   margin-top: 5px;
@@ -402,23 +354,18 @@ textarea:focus {
   cursor: pointer;
   padding: 0 4px;
   transition: color 0.2s;
-  /* Cor da estrela vazia, usando um cinza sutil */
   color: var(--form-placeholder);
 }
 
-/* Estrelas acesas */
 .star-rating input:checked ~ label {
-  /* Cor dourada/amarela definida na variável --color-star */
   color: var(--color-star);
 }
 
-/* Hover (ao passar o mouse) */
 .star-rating label:hover,
 .star-rating label:hover ~ label {
   color: var(--color-star);
 }
 
-/* --- Mensagens de Status (Mantido do código anterior) --- */
 .error-message {
   color: var(--color-error-text);
   font-size: 0.9em;
@@ -437,10 +384,6 @@ textarea:focus {
   color: var(--color-error-text);
   border: 1px solid var(--color-error-border);
 }
-
-/* ----------------------------------------------------------- */
-/* --- FORMULÁRIO SIMPLIFICADO MELHORADO --- */
-/* ----------------------------------------------------------- */
 
 .simple-feedback-form {
   max-width: 600px;
@@ -632,7 +575,6 @@ textarea:focus {
   }
 }
 
-/* Melhorias para o tema light */
 .light-theme .simple-feedback-form {
   box-shadow: 0 10px 40px var(--shadow-dark);
 }
@@ -645,7 +587,6 @@ textarea:focus {
   background: var(--color-background-secondary);
 }
 
-/* Responsividade para o formulário simplificado */
 @media (max-width: 768px) {
   .simple-feedback-form {
     max-width: 100%;
@@ -698,14 +639,6 @@ textarea:focus {
     font-size: 1.8rem;
   }
 }
-
-/* ----------------------------------------------------------- */
-/* --- CARDS DE FEEDBACK --- */
-/* ----------------------------------------------------------- */
-
-/* ----------------------------------------------------------- */
-/* --- CARDS DE FEEDBACK --- */
-/* ----------------------------------------------------------- */
 
 .feedback-cards-section {
   margin: 3rem 0;
@@ -806,10 +739,6 @@ textarea:focus {
   font-size: 1.1rem;
 }
 
-/* ----------------------------------------------------------- */
-/* --- TOAST DE CONFIRMAÇÃO --- */
-/* ----------------------------------------------------------- */
-
 .toast {
   position: fixed;
   top: 20px;
@@ -852,9 +781,6 @@ textarea:focus {
   font-size: 0.9rem;
 }
 
-/* ----------------------------------------------------------- */
-/* --- Responsividade Básica --- */
-/* ----------------------------------------------------------- */
 @media (max-width: 600px) {
   .form-container {
     padding: 20px;
@@ -904,7 +830,6 @@ textarea:focus {
   }
 
   .options {
-    /* Garante que em telas pequenas as opções quebrem bem */
     flex-direction: column;
     gap: 10px;
   }
