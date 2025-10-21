@@ -3,7 +3,8 @@
 /* Reset básico e centralização */
 
 main {
-  padding-top: 80px; /* Espaço para header fixa */
+  padding-top: 80px;
+  /* Espaço para header fixa */
 }
 
 .form-container {
@@ -75,12 +76,14 @@ main {
 
 .options {
   display: flex;
-  gap: 15px; /* Espaço entre as opções */
+  gap: 15px;
+  /* Espaço entre as opções */
   flex-wrap: wrap;
 }
 
 .options input[type="radio"] {
-  display: none; /* Esconde o radio button nativo */
+  display: none;
+  /* Esconde o radio button nativo */
 }
 
 .options label {
@@ -95,7 +98,7 @@ main {
 }
 
 /* Efeito ao selecionar a opção */
-.options input[type="radio"]:checked + label {
+.options input[type="radio"]:checked+label {
   /* Fundo e borda com a cor principal de acento */
   background-color: var(--accent-color-primary);
   color: white;
@@ -128,7 +131,8 @@ textarea {
   border-radius: 4px;
   box-sizing: border-box;
   transition: border-color 0.3s, box-shadow 0.3s;
-  font-family: inherit; /* Garante que a fonte do corpo seja usada */
+  font-family: inherit;
+  /* Garante que a fonte do corpo seja usada */
 }
 
 /* Efeito Visual: HOVER */
@@ -154,7 +158,8 @@ textarea:focus {
   padding: 15px;
   /* Cores do botão conforme as variáveis */
   background-color: var(--accent-color-primary);
-  color: var(--color-text-primary); /* Texto branco */
+  color: var(--color-text-primary);
+  /* Texto branco */
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -179,7 +184,8 @@ textarea:focus {
 }
 
 .star-rating {
-  direction: rtl; /* Inverte a ordem para funcionalidade CSS */
+  direction: rtl;
+  /* Inverte a ordem para funcionalidade CSS */
   display: inline-block;
   font-size: 2.5em;
   margin-top: 5px;
@@ -198,14 +204,14 @@ textarea:focus {
 }
 
 /* Estrelas acesas */
-.star-rating input:checked ~ label {
+.star-rating input:checked~label {
   /* Cor dourada/amarela definida na variável --color-star */
   color: var(--color-star);
 }
 
 /* Hover (ao passar o mouse) */
 .star-rating label:hover,
-.star-rating label:hover ~ label {
+.star-rating label:hover~label {
   color: var(--color-star);
 }
 
@@ -252,11 +258,9 @@ textarea:focus {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--accent-color-primary),
-    var(--accent-color-secondary)
-  );
+  background: linear-gradient(90deg,
+      var(--accent-color-primary),
+      var(--accent-color-secondary));
 }
 
 .simple-feedback-form .form-group {
@@ -358,8 +362,8 @@ textarea:focus {
   filter: drop-shadow(0 4px 8px var(--shadow-medium));
 }
 
-.simple-feedback-form .star-rating input:checked ~ label,
-.simple-feedback-form .star-rating input:checked ~ label ~ label {
+.simple-feedback-form .star-rating input:checked~label,
+.simple-feedback-form .star-rating input:checked~label~label {
   color: var(--color-star);
   transform: scale(1.1);
   filter: drop-shadow(0 4px 8px var(--shadow-dark));
@@ -409,13 +413,16 @@ textarea:focus {
 }
 
 @keyframes shake {
+
   0%,
   100% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-5px);
   }
+
   75% {
     transform: translateX(5px);
   }
@@ -424,7 +431,6 @@ textarea:focus {
 /* Melhorias para o tema light */
 .light-theme .simple-feedback-form {
   box-shadow: 0 10px 40px var(--shadow-dark);
-  border: 1px solid var(--accent-color-primary);
 }
 
 .light-theme .simple-feedback-form .star-rating {

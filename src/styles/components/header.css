@@ -15,7 +15,7 @@
 
 .site-header.sticky {
   backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px var(--shadow-color-dark);
+  box-shadow: 0 2px 10px var(--shadow-color-dark);
 }
 
 .site-header .container {
