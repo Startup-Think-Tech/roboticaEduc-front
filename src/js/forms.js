@@ -7,16 +7,29 @@ const escapeHtml = (text) => {
 };
 
 const loadLatestFeedbacks = async () => {
+  const loadingElement = document.getElementById("feedbackLoading");
+  const gridElement = document.getElementById("feedbackCardsGrid");
+  
+  if (loadingElement) {
+    loadingElement.classList.remove("hidden");
+  }
+  if (gridElement) {
+    gridElement.classList.add("hidden");
+  }
+
   try {
     const response = await fetch(`${API_BASE_URL}/feedbacks`);
     const responseText = await response.text();
 
     if (!response.ok) {
+      if (loadingElement) {
+        loadingElement.classList.add("hidden");
+      }
       return;
     }
 
     const data = JSON.parse(responseText);
-
+    
     if (data.success && data.data && Array.isArray(data.data)) {
       const sortedByDate = data.data.sort((a, b) => {
         return new Date(b.created_at) - new Date(a.created_at);
@@ -24,11 +37,17 @@ const loadLatestFeedbacks = async () => {
       const latestFeedbacks = sortedByDate.slice(0, 4);
       renderFeedbacks(latestFeedbacks);
     }
-  } catch (error) {}
+  } catch (error) {
+    if (loadingElement) {
+      loadingElement.classList.add("hidden");
+    }
+  }
 };
 
 const renderFeedbacks = (feedbacks) => {
   const container = document.getElementById("feedbackCardsGrid");
+  const loadingElement = document.getElementById("feedbackLoading");
+  
   if (!container) return;
 
   container.innerHTML = "";
@@ -37,6 +56,11 @@ const renderFeedbacks = (feedbacks) => {
     const card = createFeedbackCard(feedback);
     container.appendChild(card);
   });
+
+  if (loadingElement) {
+    loadingElement.classList.add("hidden");
+  }
+  container.classList.remove("hidden");
 };
 
 const createFeedbackCard = (feedback) => {

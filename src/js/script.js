@@ -20,6 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  const backToTopBtn = document.getElementById("backToTop");
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+
   // Funcionalidade do menu hambúrguer
   const hamburger = document.getElementById("hamburger");
   const siteNav = document.getElementById("siteNav");

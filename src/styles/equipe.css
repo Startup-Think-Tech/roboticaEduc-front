@@ -203,34 +203,36 @@ main {
   }
 
   .conteiner-equipe {
-    padding: 0 1rem;
+    padding: 0 2rem;
     justify-content: center;
   }
 
   .carrossel-wrapper {
-    max-width: calc(1 * 280px);
+    max-width: calc(1 * 260px);
     flex: none;
+    margin: 0 1.5rem;
   }
 
   .carrossel-btn {
-    width: 35px;
-    height: 35px;
+    width: 36px;
+    height: 36px;
     font-size: 16px;
     z-index: 100;
+    padding: 0;
   }
 
   .carrossel-btn--prev {
-    left: -15px;
+    left: -40px;
   }
 
   .carrossel-btn--next {
-    right: -15px;
+    right: -40px;
   }
 
   .card-membro {
-    flex: 0 0 280px;
-    min-width: 280px;
-    max-width: 280px;
+    flex: 0 0 260px;
+    min-width: 260px;
+    max-width: 260px;
   }
 
   .conteiner-membros {

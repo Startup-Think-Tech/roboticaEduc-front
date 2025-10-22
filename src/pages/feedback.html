@@ -63,6 +63,13 @@
                 <!-- Seção de Cards de Feedback -->
                 <div class="feedback-cards-section">
                     <h2 class="section-subtitle">Depoimentos dos Participantes</h2>
+                    
+                    <!-- Loading -->
+                    <div id="feedbackLoading" class="feedback-loading">
+                        <div class="spinner"></div>
+                        <p>Carregando depoimentos...</p>
+                    </div>
+                    
                     <div id="feedbackCardsGrid" class="feedback-cards-grid">
                         <!-- Cards serão carregados dinamicamente aqui -->
                     </div>
@@ -125,7 +132,7 @@
                 <p>Desenvolvimento em Equipe para Projeto Acadêmico.</p>
             </div>
             <div class="footer-links">
-                <a href="#">Voltar ao Topo</a>
+                <a href="#" id="backToTop">Voltar ao Topo</a>
             </div>
         </div>
     </footer>

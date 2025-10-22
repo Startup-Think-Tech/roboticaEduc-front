@@ -1,7 +1,18 @@
 @import url("./main.css");
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
-  padding-top: 80px; /* Espaço para header fixa */
+  flex: 1;
+  padding-top: 80px;
+}
+
+.site-footer {
+  margin-top: auto;
 }
 
 /* Card de Resultados */
