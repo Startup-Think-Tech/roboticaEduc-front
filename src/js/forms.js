@@ -1,5 +1,8 @@
 const API_BASE_URL = "https://robotica-edu-back.vercel.app";
 
+let isFeedbackSubmitting = false;
+let isContactSubmitting = false;
+
 const escapeHtml = (text) => {
   const div = document.createElement("div");
   div.textContent = text;
@@ -226,6 +229,10 @@ const showErrorToast = () => {
 };
 
 const submitFeedbackWithToast = async (formData, submitButton) => {
+  if (isFeedbackSubmitting) return;
+  
+  isFeedbackSubmitting = true;
+  
   try {
     if (submitButton) {
       submitButton.disabled = true;
@@ -288,10 +295,15 @@ const submitFeedbackWithToast = async (formData, submitButton) => {
       submitButton.disabled = false;
       submitButton.textContent = "Enviar Feedback";
     }
+    isFeedbackSubmitting = false;
   }
 };
 
 const submitContactWithToast = async (formData, submitButton) => {
+  if (isContactSubmitting) return;
+  
+  isContactSubmitting = true;
+  
   try {
     if (submitButton) {
       submitButton.disabled = true;
@@ -341,6 +353,7 @@ const submitContactWithToast = async (formData, submitButton) => {
       submitButton.disabled = false;
       submitButton.textContent = "Enviar Mensagem";
     }
+    isContactSubmitting = false;
   }
 };
 
