@@ -178,6 +178,7 @@ main {
   color: var(--card-text-secondary);
   margin: 0 0 1.5rem 0;
   flex-grow: 1;
+  text-align: justify;
 }
 
 .membro-links {
