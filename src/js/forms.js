@@ -9,7 +9,7 @@ const escapeHtml = (text) => {
 const loadLatestFeedbacks = async () => {
   const loadingElement = document.getElementById("feedbackLoading");
   const gridElement = document.getElementById("feedbackCardsGrid");
-  
+
   if (loadingElement) {
     loadingElement.classList.remove("hidden");
   }
@@ -29,7 +29,7 @@ const loadLatestFeedbacks = async () => {
     }
 
     const data = JSON.parse(responseText);
-    
+
     if (data.success && data.data && Array.isArray(data.data)) {
       const sortedByDate = data.data.sort((a, b) => {
         return new Date(b.created_at) - new Date(a.created_at);
@@ -47,7 +47,7 @@ const loadLatestFeedbacks = async () => {
 const renderFeedbacks = (feedbacks) => {
   const container = document.getElementById("feedbackCardsGrid");
   const loadingElement = document.getElementById("feedbackLoading");
-  
+
   if (!container) return;
 
   container.innerHTML = "";
@@ -169,9 +169,10 @@ const initFormValidation = (formId) => {
     if (formIsValid) {
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
+      const submitButton = form.querySelector('button[type="submit"]');
 
       if (formId === "feedbackForm") {
-        submitFeedbackWithToast(data);
+        submitFeedbackWithToast(data, submitButton);
       }
     }
   });
@@ -224,8 +225,13 @@ const showErrorToast = () => {
   }
 };
 
-const submitFeedbackWithToast = async (formData) => {
+const submitFeedbackWithToast = async (formData, submitButton) => {
   try {
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+    }
+
     const response = await fetch(`${API_BASE_URL}/feedbacks`, {
       method: "POST",
       headers: {
@@ -277,11 +283,21 @@ const submitFeedbackWithToast = async (formData) => {
     }
   } catch (error) {
     showErrorToast();
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = "Enviar Feedback";
+    }
   }
 };
 
-const submitContactWithToast = async (formData) => {
+const submitContactWithToast = async (formData, submitButton) => {
   try {
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Enviando...";
+    }
+
     const response = await fetch(`${API_BASE_URL}/contacts`, {
       method: "POST",
       headers: {
@@ -320,6 +336,11 @@ const submitContactWithToast = async (formData) => {
     }
   } catch (error) {
     showErrorToast();
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = "Enviar Mensagem";
+    }
   }
 };
 
@@ -332,8 +353,9 @@ const initContactForm = () => {
 
     const formData = new FormData(contactForm);
     const data = Object.fromEntries(formData);
+    const submitButton = contactForm.querySelector('button[type="submit"]');
 
-    await submitContactWithToast(data);
+    await submitContactWithToast(data, submitButton);
     contactForm.reset();
   });
 
