@@ -4,6 +4,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 main {
@@ -14,6 +17,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  background-color: transparent;
 }
 
 .site-footer {
@@ -217,6 +221,16 @@ main {
 
 /* Responsividade */
 @media (max-width: 768px) {
+  body {
+    background-color: var(--bg-color-dark);
+  }
+
+  main {
+    margin: 2rem auto;
+    padding: 80px 1rem 0 1rem;
+    background-color: transparent;
+  }
+
   .result-content {
     flex-direction: column !important;
   }
@@ -243,6 +257,7 @@ main {
 
   .result-card {
     padding: 1.5rem;
+    background-color: var(--card-bg);
   }
 
   .result-text h3 {
