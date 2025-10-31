@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm install && node generate-config.js",
+  "outputDirectory": ".",
+  "framework": null
+}
+
