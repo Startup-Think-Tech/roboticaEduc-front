@@ -1,4 +1,6 @@
-const API_BASE_URL = "https://robotica-edu-back.vercel.app";
+import { API_URL } from "./config.js";
+
+const API_BASE_URL = API_URL;
 
 let isFeedbackSubmitting = false;
 let isContactSubmitting = false;
@@ -9,7 +11,7 @@ const escapeHtml = (text) => {
   return div.innerHTML;
 };
 
-const loadLatestFeedbacks = async () => {
+export const loadLatestFeedbacks = async () => {
   const loadingElement = document.getElementById("feedbackLoading");
   const gridElement = document.getElementById("feedbackCardsGrid");
 
@@ -144,7 +146,7 @@ const validateInput = (inputElement) => {
   return isValid;
 };
 
-const initFormValidation = (formId) => {
+export const initFormValidation = (formId) => {
   const form = document.getElementById(formId);
   if (!form) return;
 
@@ -181,7 +183,7 @@ const initFormValidation = (formId) => {
   });
 };
 
-const setupStarRating = () => {
+export const setupStarRating = () => {
   const starInputs = document.querySelectorAll('input[name="rating"]');
 
   if (!starInputs.length) return;
@@ -230,9 +232,9 @@ const showErrorToast = () => {
 
 const submitFeedbackWithToast = async (formData, submitButton) => {
   if (isFeedbackSubmitting) return;
-  
+
   isFeedbackSubmitting = true;
-  
+
   try {
     if (submitButton) {
       submitButton.disabled = true;
@@ -301,9 +303,9 @@ const submitFeedbackWithToast = async (formData, submitButton) => {
 
 const submitContactWithToast = async (formData, submitButton) => {
   if (isContactSubmitting) return;
-  
+
   isContactSubmitting = true;
-  
+
   try {
     if (submitButton) {
       submitButton.disabled = true;
@@ -388,4 +390,5 @@ document.addEventListener("DOMContentLoaded", () => {
   loadLatestFeedbacks();
   initFormValidation("feedbackForm");
   initContactForm();
+  setupStarRating();
 });
