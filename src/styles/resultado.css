@@ -4,8 +4,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-color-dark);
-  color: var(--text-color-dark);
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -229,9 +227,6 @@ main {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  body {
-    background-color: var(--bg-color-dark);
-  }
 
   main {
     margin: 2rem auto;
