@@ -24,100 +24,108 @@ main {
   margin-top: auto;
 }
 
-/* Card de Resultados
-.results-card {
-  max-width: 600px;
-  margin: 4rem auto;
-  padding: 3rem 2rem;
-  background: var(--card-bg);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px var(--shadow-dark);
-  text-align: center;
-  border: 1px solid var(--color-background-secondary);
-  transition: all 0.3s ease;
+/* Seção PLANEJAMENTO com Carrossel */
+.planning-section {
+  margin-bottom: 3rem;
 }
 
-.results-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px var(--shadow-dark);
-}
-
-.results-icon {
-  margin-bottom: 1.5rem;
-  color: var(--accent-color-primary);
-}
-
-.question-mark {
-  display: inline-block;
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--accent-color-primary);
-  text-align: center;
-  line-height: 1;
-  width: 80px;
-  height: 80px;
-  border: 3px solid var(--accent-color-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-.results-title {
+.planning-page-title {
   font-size: 2rem;
-  font-weight: 700;
   color: var(--accent-color-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.title-center-card {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow-medium);
+  background-color: var(--card-bg);
   margin-bottom: 1rem;
 }
 
-.results-message {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--color-text-primary);
-  margin-bottom: 2rem;
+.carousel-wrapper {
+  display: flex;
+  width: 1200%;
+  height: 100%;
+  will-change: transform;
+  pointer-events: none;
 }
 
-.results-status {
+.carousel-wrapper .carousel-slide {
+  pointer-events: none;
+}
+
+.carousel-wrapper .carousel-slide img {
+  pointer-events: none;
+}
+
+.carousel-slide {
+  width: calc(100% / 12);
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.carousel-indicators {
   display: flex;
-  align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem;
-  background: var(--color-background-secondary);
-  border-radius: 8px;
-  border: 1px solid var(--accent-color-primary);
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: auto;
 }
 
-.status-indicator {
-  width: 12px;
-  height: 12px;
-  background: var(--accent-color-primary);
+.indicator {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  animation: pulse 2s infinite;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  pointer-events: auto;
+  position: relative;
+  z-index: 11;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.status-text {
-  color: var(--color-text-primary);
-  font-weight: 500;
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.indicator.active {
+  background-color: var(--accent-color-primary);
+  transform: scale(1.2);
 }
-
-*/
 
 .results-page-title {
   font-size: 2rem;
@@ -229,6 +237,27 @@ main {
     margin: 2rem auto;
     padding: 80px 1rem 0 1rem;
     background-color: transparent;
+  }
+
+  .planning-page-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-container {
+    height: 300px;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .carousel-indicators {
+    padding: 0.75rem;
+    gap: 0.4rem;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
   }
 
   .result-content {
